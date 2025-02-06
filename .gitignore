@@ -1,0 +1,49 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+/dist
+/app
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+.idea/
+.env
+src/.next/
+
+email/output
+
+tsconfig.tsbuildinfo
+
+# // "@testing-library/jest-dom": "^4.2.4",
+# // "@testing-library/react": "^9.3.2",
+# // "@testing-library/user-event": "^7.1.2",
+
+
+knip-output.json
+sonar-project.properties
+.scannerwork
