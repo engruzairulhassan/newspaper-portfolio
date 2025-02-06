@@ -3,9 +3,12 @@
 # dependencies
 /node_modules
 /.pnp
-.pnp.js
-/dist
-/app
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 
 # testing
 /coverage
@@ -19,31 +22,20 @@
 
 # misc
 .DS_Store
+*.pem
 
 # debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.pnpm-debug.log*
 
-# local env files
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# env files (can opt-in for committing if needed)
+.env*
 
-.idea/
-.env
-src/.next/
+# vercel
+.vercel
 
-email/output
-
-tsconfig.tsbuildinfo
-
-# // "@testing-library/jest-dom": "^4.2.4",
-# // "@testing-library/react": "^9.3.2",
-# // "@testing-library/user-event": "^7.1.2",
-
-
-knip-output.json
-sonar-project.properties
-.scannerwork
+# typescript
+*.tsbuildinfo
+next-env.d.ts
