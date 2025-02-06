@@ -1,101 +1,75 @@
-import Image from "next/image";
+"use client";
+import React, { useState } from "react";
+import { getTheme } from "../app/styles/themes/index";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
-export default function Home() {
+function Page() {
+  const [selectedTheme, setSelectedTheme] = useState("default");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const theme = getTheme(selectedTheme); 
+  const handleThemeChange = (themeName: React.SetStateAction<string>) => {
+    setSelectedTheme(themeName);
+    setIsDropdownOpen(false);
+  };
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div
+      className="min-h-screen flex justify-center relative"
+      style={{ background: theme.colors.background, color: theme.colors.text}}
+    >
+      <div className="absolute top-4 right-4 z-50"  >
+        <button
+          className="flex items-center p-2 border border-gray-300 rounded shadow-md bg-white"
+          onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+          style={{ color: theme.colors.text }}
+        >
+          Select Theme
+          <FontAwesomeIcon icon={faChevronDown} className="ml-2" />
+        </button>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        {isDropdownOpen && (
+        <div className="absolute bg-white border border-gray-300 rounded mt-2 w-40 shadow-md right-0">
+            {["red", "green", "blue", "default"].map((themeName) => (
+              <button
+                key={themeName}
+                className="block w-full text-left p-2 hover:bg-gray-100"
+                onClick={() => handleThemeChange(themeName)}
+              >
+                {themeName.charAt(0).toUpperCase() + themeName.slice(1)}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <div className="w-full max-w-7xl px-8">
+          <main className="flex justify-center p-4 pt-10" 
+          style={{
+            background: theme.colors.headerBg,
+            color: "#000",
+            marginTop: '20px',
+            boxShadow: "0 8px 20px rgba(0, 0, 0, 0.2)",
+          }}>
+          <section
+            className=" rounded-lg p-8 w-full max-w-3xl text-center">
+            <h1
+              className="text-5xl font-bold"
+              style={{
+                color: theme.colors.text,
+                fontFamily: "'Playfair Display', serif",
+                fontSize: "60px",
+                textShadow: "2px 2px 5px rgba(0, 0, 0, 0.2)", 
+              }}
+            >
+              THE NEWSPAPER
+            </h1>
+          </section>
+        <hr  style={{height: '4px'}}/>
+        </main>
+      </div>
     </div>
   );
 }
+
+export default Page;
