@@ -118,8 +118,6 @@ const DailyFeedCarousel = () => {
             </div>
           ))}
         </div>
-        import Image from 'next/image';
-
       <div>
       <div className="flex justify-between items-center mt-4 pr-3">
           <div className="text-sm font-semibold cursor-pointer">
