@@ -5,9 +5,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import DailyFeedCarousel from '../components/DailyFeedCarousel'
+import TextUI from '../components/Testui';
 
 function Page() {
-  const [selectedTheme, setSelectedTheme] = useState("default");
+  const [selectedTheme, setSelectedTheme] = useState("classic");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const theme = getTheme(selectedTheme); 
@@ -22,8 +23,8 @@ function Page() {
 
   return (
     <div
-      className="min-h-screen flex justify-center relative"
-      style={{ background: theme.colors.background, color: theme.colors.text,  }}
+      className={`min-h-screen flex justify-center relative theme-${selectedTheme}`}
+      style={{ background: theme.colors.background, color: theme.colors.text}}
     >
       <div className="absolute top-4 right-4 z-50">
       <button
@@ -40,7 +41,7 @@ function Page() {
 
         {isDropdownOpen && (
           <div className="absolute bg-white border border-gray-300 rounded mt-2 w-40 shadow-md right-0">
-            {["red", "green", "blue", "default"].map((themeName) => (
+            {["classic", "modern", "bold"].map((themeName) => (
               <button
                 key={themeName}
                 className="block w-full text-left p-2 hover:bg-gray-100"
@@ -61,6 +62,18 @@ function Page() {
               marginTop: '20px',
             }}>
             <section className="relative rounded-lg  text-center">
+              <div>
+                <h1
+                  className="font-bold bg-secondary text-textPrimary p-4 rounded text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+                  style={{
+                    color: theme.colors.text,
+                    fontFamily: "'Playfair Display', serif",
+                    textShadow: "2px 2px 5px rgba(0, 0, 0, 0.2)",
+                  }}
+                >
+                  THE NEWSPAPER uk
+                </h1>
+              </div>
             <h1
               className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
               style={{
@@ -135,6 +148,7 @@ function Page() {
                             <hr style={{ borderBottom: '1px solid #b5afaf8a', borderTop: 'none' }} />
                           </div>
                           <DailyFeedCarousel/>
+                          <TextUI/>
                         </div>
                       </div>
                   </div>
