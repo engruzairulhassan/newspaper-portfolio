@@ -1,8 +1,7 @@
 "use client"
 import React, { useState, useEffect, useRef } from 'react';
 import feedData from '../commonComponents/feedData';  
-
-const DailyFeedCarousel = () => {
+const DailyFeedCarousel = ({setActivePage}) => {
   const itemsPerPage = 4;
   const totalPages = Math.ceil(feedData.length / itemsPerPage);
   const [currentPage, setCurrentPage] = useState(0);
@@ -30,7 +29,7 @@ const DailyFeedCarousel = () => {
         }
         return newPage;
       });
-    }, 3000);
+    }, 5000);
   };
 
   const stopAutoMove = () => {
@@ -62,7 +61,6 @@ const DailyFeedCarousel = () => {
   const handleMouseUp = () => {
     isDraggingRef.current = false;
   };
-
   const nextPage = () => {
     stopAutoMove();
     setCurrentPage((prev) => Math.min(prev + 1, totalPages - 1));
@@ -72,9 +70,8 @@ const DailyFeedCarousel = () => {
     stopAutoMove();
     setCurrentPage((prev) => Math.max(prev - 1, 0));
   };
-
   return (
-    <div className="carousel-container" style={{ overflow: 'hidden', width: '100%' }}>
+    <div className="carousel-container" style={{ overflow: 'hidden', width: '100%'}}>
       <div
         className="flex transition-transform duration-500"
         style={{ transform: `translateX(-${currentPage * 100}%)` }}
@@ -84,11 +81,11 @@ const DailyFeedCarousel = () => {
         onMouseLeave={handleMouseUp}
       >
         {Array.from({ length: totalPages }).map((_, pageIndex) => (
-          <div key={pageIndex} style={{ minWidth: '100%', display: 'flex', flexDirection: 'column' }}>
+          <div key={pageIndex} style={{ minWidth: '100%', display: 'flex', flexDirection: 'column'}}>
             {feedData.slice(pageIndex * itemsPerPage, (pageIndex + 1) * itemsPerPage).map((feed, index) => (
               <div key={index} style={{ textAlign: 'left', padding: '10px', borderBottom: '1px solid gray' }}>
                 <p className="text-gray-500 text-xs uppercase">IN {feed.category}</p>
-                <h3 className="font-extrabold text-lg">{feed.title}</h3>
+                <h3 onClick={()=> setActivePage("NewsData")} className="font-extrabold text-lg cursor-pointer hover:underline">{feed.title}</h3>
                 <p className="text-gray-700">{feed.desc}</p>
               </div>
             ))}
@@ -96,7 +93,7 @@ const DailyFeedCarousel = () => {
         ))}
       </div>
       <div className="flex justify-between items-center mt-4 pr-3">
-        <div className="text-sm font-semibold cursor-pointer">VIEW MORE POSTS</div>
+        <a><div className="text-sm font-semibold cursor-pointer">VIEW MORE POSTS</div></a>
         <div className="flex gap-4 text-lg font-bold">
           <span onClick={prevPage} className={`cursor-pointer ${currentPage === 0 ? 'text-gray-400 cursor-not-allowed' : 'hover:text-blue-500'}`}>
             &lt;
