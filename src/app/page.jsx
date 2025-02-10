@@ -1,17 +1,23 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getTheme } from "../app/styles/themes/index";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import DailyFeedCarousel from '../components/DailyFeedCarousel'
 import TextUI from '../components/Testui';
+import FetchCSVData from '../Apis'
 
 function Page() {
   const [selectedTheme, setSelectedTheme] = useState("classic");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const theme = getTheme(selectedTheme); 
+
+  useEffect(() => {
+    FetchCSVData();
+  }, []);
+  
   const handleThemeChange = (themeName) => {
     setSelectedTheme(themeName);
     setIsDropdownOpen(false);
