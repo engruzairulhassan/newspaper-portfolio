@@ -9,6 +9,7 @@ const blueTheme = {
   },
 };
 
+
 export default {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -21,10 +22,12 @@ export default {
         primary: "var(--primary-bg)",
         secondary: "var(--secondary-bg)",
         accent: "var(--accent)",
+        selectedItemColor : "var(--selectedItemColor)",
         textPrimary: "var(--textPrimary)",
         textSecondary: "var(--textSecondary)",
-        borderColor: "var(--borderColor)",
+        primaryUpperNavbarLine: "var(--primaryUpperNavbarLine)",
         hoverColor: "var(--hoverColor)",
+        primaryLowerNavbarLine : "var(--primaryLowerNavbarLine)",
         ...blueTheme.colors,
       },
       fontFamily: {

@@ -1,6 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,668;1,668&display=swap");
+
+body {
+  font-family: "Playfair Display", serif;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 :root {
   --background: #ffffff;
@@ -14,46 +21,65 @@
   }
 }
 
+
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.theme-classic {
-  --primary-bg: #ffffff;         /* White background */
-  --secondary-bg: #f8f8f8;         /* Light gray */
-  --textPrimary: #000000;         /* Black text */
-  --textSecondary: #333333;       /* Dark gray text */
-  --accent: #222222;              /* Dark accent for headings */
-  --borderColor: #dddddd;         /* Light border */
-  --hoverColor: #444444;          /* Hover text color */
-  --primary-font: 'Times New Roman', serif;
-  --secondary-font: 'Arial', sans-serif;
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
 }
 
-/* --- Modern Times Theme --- */
+
+h1 {
+  font-family: 'Playfair Display', Georgia, Times, 'Century Schoolbook L', serif;
+}
+
+
+.theme-classic {
+  --primary-bg: #F4F4F4;         /* White background */
+  --secondary-bg: #FFFFFF;         /* Light gray */
+  --textPrimary: #000000;         /* Black text */
+  --textSecondary: #000000;       /* Dark gray text */
+  --accent: #222222;              /* Dark accent for headings */
+  --primaryUpperNavbarLine: #dee2e2;
+  --hoverColor: #206a22bd;          /* Hover text color */
+  --primary-font: 'Times New Roman', serif;
+  --secondary-font: 'Arial', sans-serif;
+  --selectedItemColor : #8c919b;
+  --primaryLowerNavbarLine: #666666;
+}
+
 .theme-modern {
   --primary-bg: #121212;         /* Dark background */
   --secondary-bg: #1e1e1e;         /* Darker gray */
   --textPrimary: #e0e0e0;         /* Light text */
-  --textSecondary: #b0b0b0;       /* Secondary light text */
+  --textSecondary: #F5F5DC;       /* Secondary light text */
   --accent: #bb86fc;              /* Vibrant purple accent */
-  --borderColor: #2e2e2e;         /* Dark border */
-  --hoverColor: #bb86fc;          /* Accent on hover */
+  --borderColor: #ffffff;         /* Dark border */
+  --hoverColor: #d8bc9b;          /* Accent on hover */
   --primary-font: 'Roboto', sans-serif;
   --secondary-font: 'Helvetica', sans-serif;
+  --selectedItemColor :#8c919b;
+
 }
 
-/* --- Bold News Theme --- */
 .theme-bold {
   --primary-bg: #f5f5f5;         /* Off-white background */
-  --secondary-bg: #ffeb3b;         /* Bold yellow secondary background */
+  --secondary-bg: #7F95BD;         /* Bold yellow secondary background */
   --textPrimary: #212121;         /* Dark text */
-  --textSecondary: #424242;       /* Medium dark text */
-  --accent: #d32f2f;              /* Bold red accent */
-  --borderColor: #9e9e9e;         /* Gray border */
-  --hoverColor: #b71c1c;          /* Darker red on hover */
+  --textSecondary: #424242;  
+  --accent: #d32f2f;
+  --borderColor: #9e9e9e;  
+  --selectedItemColor : #8c919b;
+  --hoverColor: #87b4da;          /* Darker red on hover */
   --primary-font: 'Georgia', serif;
   --secondary-font: 'Verdana', sans-serif;
 }
+
+

@@ -33,4 +33,21 @@ const feedData = [
     { category: "ENTERTAINMENT", title: "Exclusive Interview with a Rising Star", desc: "Nam facilisis, eros nec eleifend vulputate mauris eget mattis.." },
   ];
   
+
+
+  export const latestArticles = [
+    "The Ultimate Guide to New York’s Favorite Food",
+    "Salty Peanut-Pretzel Ice Cream Cake",
+    "A Cool Solution for Hot Summer Nights",
+    "Full Irish Breakfast In Manhattan",
+    "When to Cook Your Vegetables Long Past “Done”",
+    "Overcoming Your Fear Of The Kitchen",
+    "Want to Make Creamed Corn Into a Meal? Add Shrimp",
+    "Why Healthy Eating Doesn’t Mean Dieting",
+    "A Quick, Satisfying Fix for Weeknight Chicken",
+    "Fresh Food on TV: Weekend Edition",
+    "When to Cook Your Vegetables Long Past “Done”",
+  ];
+
   export default feedData;
+
