@@ -18,12 +18,12 @@ function parseCSV(csvText) {
 
 export default function FetchCSVData() {
     console.log("ppppppaa")
-    const csvUrl = 'https://docs.google.com/spreadsheets/d/1hMnC1qKXZ2OR_6HukGWg9mtxWdDZBwG9ba82fcfI5_E/edit?usp=sharing'; // Replace with your Google Sheets CSV file URL
+    const csvUrl = 'https://script.google.com/macros/s/AKfycbw3HmNqhFJf8zZuUdDN4fLTJ2SOVH1A3wy25USRo0ZcdKh39GgJy0mkODhoJfpkX9KShQ/exec'; // Replace with your Google Sheets CSV file URL
     axios.get(csvUrl)
     .then((response) => {
-        const parsedCsvData = parseCSV(response.data);
+        // const parsedCsvData = parseCSV(response.data);
         // setCsvData(parsedCsvData);
-        console.log("ppppooo", parsedCsvData);
+        console.log("ppppooo", response);
     })
     .catch((error) => {
         console.error('Error fetching CSV data:', error);
