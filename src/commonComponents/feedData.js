@@ -33,8 +33,6 @@ const feedData = [
     { category: "ENTERTAINMENT", title: "Exclusive Interview with a Rising Star", desc: "Nam facilisis, eros nec eleifend vulputate mauris eget mattis.." },
   ];
   
-
-
   export const latestArticles = [
     "The Ultimate Guide to New York’s Favorite Food",
     "Salty Peanut-Pretzel Ice Cream Cake",

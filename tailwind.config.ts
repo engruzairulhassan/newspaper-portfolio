@@ -9,6 +9,34 @@ const blueTheme = {
   },
 };
 
+const defaultTheme = {
+  colors: {
+    background: "#F4F4F4",
+    text: "#000000",
+    headerBg: "#FFFFFF",
+  },
+};
+
+
+const redTheme = {
+  colors: {
+    background: "#F5F5DC",
+    text: "#3E2723",
+    headerBg: "#795548",
+    accent: "#8D6E63",
+    border: "#D7CCC8",
+  },
+};
+
+const greenTheme = {
+  colors: {
+    background: "#E8F5E9",
+    text: "#1B5E20",
+    headerBg: "#004D40",
+    accent: "#FFEB3B",
+    border: "#B2DFDB",
+  },
+};
 
 export default {
   content: [
@@ -22,13 +50,16 @@ export default {
         primary: "var(--primary-bg)",
         secondary: "var(--secondary-bg)",
         accent: "var(--accent)",
-        selectedItemColor : "var(--selectedItemColor)",
+        selectedItemColor: "var(--selectedItemColor)",
         textPrimary: "var(--textPrimary)",
         textSecondary: "var(--textSecondary)",
         primaryUpperNavbarLine: "var(--primaryUpperNavbarLine)",
         hoverColor: "var(--hoverColor)",
-        primaryLowerNavbarLine : "var(--primaryLowerNavbarLine)",
+        primaryLowerNavbarLine: "var(--primaryLowerNavbarLine)",
         ...blueTheme.colors,
+        ...defaultTheme.colors,
+        ...redTheme.colors,
+        ...greenTheme.colors,
       },
       fontFamily: {
         primary: ["var(--primary-font)"],

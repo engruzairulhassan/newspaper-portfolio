@@ -11,3 +11,4 @@ const themes = {
 };
 
 export const getTheme = (theme) => themes[theme] || themes.default;
+
