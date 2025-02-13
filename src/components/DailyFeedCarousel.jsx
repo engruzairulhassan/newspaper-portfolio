@@ -71,39 +71,120 @@ const DailyFeedCarousel = ({setActivePage}) => {
     setCurrentPage((prev) => Math.max(prev - 1, 0));
   };
   return (
-    <div className="carousel-container" style={{ overflow: 'hidden', width: '100%'}}>
+    <div>
       <div
-        className="flex transition-transform duration-500"
-        style={{ transform: `translateX(-${currentPage * 100}%)` }}
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
+        className="carousel-container"
+        style={{ overflow: "hidden", width: "100%" }}
       >
-        {Array.from({ length: totalPages }).map((_, pageIndex) => (
-          <div key={pageIndex} style={{ minWidth: '100%', display: 'flex', flexDirection: 'column'}}>
-            {feedData.slice(pageIndex * itemsPerPage, (pageIndex + 1) * itemsPerPage).map((feed, index) => (
-              <div key={index} style={{ textAlign: 'left', padding: '0px 10px', borderBottom: '1px solid var(--primaryUpperNavbarLine)'  }}>
-                <p className="text-gray 300 text-textSecondary text-xs uppercase">IN {feed.category}</p>
-                <h3 onClick={()=> setActivePage("NewsData")} 
-                style={{ fontFamily: 'Oswald, Helvetica, "Nimbus Sans L", sans-serif', fontWeight: 800 , fontWeight:'bold'}}
-                className=" text-textSecondary text-lg cursor-pointer hover:underline"
-                >{feed.title}</h3>
-                <p  style={{ fontFamily: 'Times, "Times New Roman", serif' }} className="text-gray-700 text-textSecondary">{feed.desc}</p>
-              </div>
-            ))}
+        <h2
+          style={{
+            fontFamily:
+              '"Playfair Display", Georgia, Times, "Century Schoolbook L"',
+          }}
+          className="font-bold text-2xl text-left text-textSecondary pt-10 italic pb-2"
+        >
+          Daily Feed
+        </h2>
+        <div className="mt-2 mb-9">
+          <hr
+            style={{
+              borderTop: "2px solid var(--primaryUpperNavbarLine)",
+              borderBottom: "none",
+            }}
+          />
+          <div style={{ height: "2px" }}></div>
+          <hr
+            style={{
+              borderBottom: "1px solid var(--primaryUpperNavbarLine)",
+              borderTop: "none",
+            }}
+          />
+        </div>
+        <div
+          className="flex transition-transform duration-500"
+          style={{ transform: `translateX(-${currentPage * 100}%)` }}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+        >
+          {Array.from({ length: totalPages }).map((_, pageIndex) => (
+            <div
+              key={pageIndex}
+              style={{
+                minWidth: "100%",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              {feedData
+                .slice(pageIndex * itemsPerPage, (pageIndex + 1) * itemsPerPage)
+                .map((feed, index) => (
+                  <div
+                    key={index}
+                    style={{
+                      textAlign: "left",
+                      padding: "20px 10px",
+                      borderBottom: "1px solid var(--primaryUpperNavbarLine)",
+                    }}
+                  >
+                    <p
+                      className="text-gray 300 text-textSecondary text-xs uppercase"
+                      style={{ fontFamily: 'Times, "Times New Roman", serif' }}
+                    >
+                      IN {feed.category}{" "}
+                    </p>
+                    <h3
+                      onClick={() => setActivePage("NewsData")}
+                      style={{
+                        fontFamily:
+                          'Oswald, Helvetica, "Nimbus Sans L", sans-serif',
+                        fontWeight: 800,
+                        fontWeight: "bold",
+                      }}
+                      className=" text-textSecondary text-lg cursor-pointer hover:underline"
+                    >
+                      {feed.title}
+                    </h3>
+                    <p
+                      style={{ fontFamily: 'Times, "Times New Roman", serif' }}
+                      className="text-gray-700 text-textSecondary"
+                    >
+                      {feed.desc}
+                    </p>
+                  </div>
+                ))}
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-between items-center mt-4 pr-3">
+          <a>
+            <div className="text-sm font-semibold text-textSecondary cursor-pointer">
+              VIEW MORE POSTS
+            </div>
+          </a>
+          <div className="flex gap-4 text-lg font-bold">
+            <span
+              onClick={prevPage}
+              className={`cursor-pointer text-textSecondary ${
+                currentPage === 0
+                  ? "text-gray-400 cursor-not-allowed"
+                  : "hover:text-blue-500"
+              }`}
+            >
+              &lt;
+            </span>
+            <span
+              onClick={nextPage}
+              className={`cursor-pointer text-textSecondary ${
+                currentPage === totalPages - 1
+                  ? "text-gray-400 cursor-not-allowed"
+                  : "hover:text-blue-500"
+              }`}
+            >
+              &gt;
+            </span>
           </div>
-        ))}
-      </div>
-      <div className="flex justify-between items-center mt-4 pr-3">
-        <a><div className="text-sm font-semibold text-textSecondary cursor-pointer">VIEW MORE POSTS</div></a>
-        <div className="flex gap-4 text-lg font-bold">
-          <span onClick={prevPage} className={`cursor-pointer text-textSecondary ${currentPage === 0 ? 'text-gray-400 cursor-not-allowed' : 'hover:text-blue-500'}`}>
-            &lt;
-          </span>
-          <span onClick={nextPage} className={`cursor-pointer text-textSecondary ${currentPage === totalPages - 1 ? 'text-gray-400 cursor-not-allowed' : 'hover:text-blue-500'}`}>
-            &gt;
-          </span>
         </div>
       </div>
     </div>
