@@ -18,7 +18,6 @@ const ThemeMenu = ({
           <FontAwesomeIcon
             icon={faChevronDown}
             className="text-xs sm:text-sm md:text-base"
-            // style={{ color: theme.colors.text }}
           />
         </div>
       </div>
@@ -34,15 +33,13 @@ const ThemeMenu = ({
                 {themeName.charAt(0).toUpperCase() + themeName.slice(1)}
               </span>
               <div
-                className="w-4 h-4 rounded-full"
-                style={{
-                  backgroundColor:
-                    themeName === "classic"
-                      ? "green"
-                      : themeName === "modern"
-                      ? "red"
-                      : "blue",
-                }}
+                className={`w-4 h-4 rounded-full ${
+                  themeName === "classic"
+                    ? "bg-green-500"
+                    : themeName === "modern"
+                    ? "bg-red-500"
+                    : "bg-blue-500"
+                }`}
               />
             </button>
           ))}

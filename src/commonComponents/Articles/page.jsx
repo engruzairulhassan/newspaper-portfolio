@@ -1,34 +1,25 @@
 import React from "react";
-import { latestArticles } from "../../commonComponents/feedData";
+import { latestArticles } from "../../components/utils/const";
 
 const Articles = () => {
   return (
     <div
-      id="articles"
-      className="font-bold col-span-1 md:col-span-3 pt-14"
-      style={{
-        borderRight: "1px solid var(--primaryUpperNavbarLine)",
-      }}
+      className="col-span-1 md:col-span-3 pt-14 border-r border-[var(--primaryUpperNavbarLine)]"
     >
-      <h2
-        className="font-bold text-lg mb-4 text-[#64676d] text-left"
-        style={{ fontSize: "13px" }}
+      <h5
+        className="font-bold text-sm text-left  pt-[32px]"
+        style={{ color: "var(--selectedItemColor)", paddingTop: "40px" }}
       >
         LATEST ARTICLES
-      </h2>
-      <div
-        style={{
-          padding: "8px 14px 0px 8px",
-        }}
-      >
-        <ul className="text-left space-y-3 text-sm">
+      </h5>
+      <div className="pt-4 pr-[14px] pb-0 pl-[8px]">
+        <ul className="list-disc pl-6 space-y-2" style={{ paddingTop: "14px" }}>
           {latestArticles.map((article, index) => (
             <li
               key={index}
-              className="flex items-start gap-2 font-serif font-normal text-[15px] leading-[20px] text-black hover:text-black cursor-pointer"
+              className="text-left text-gray-800 cursor-pointer text-sm font-times"
             >
-              <span>•</span>
-              <span className="leading-[20px]">{article}</span>
+              {article}
             </li>
           ))}
         </ul>

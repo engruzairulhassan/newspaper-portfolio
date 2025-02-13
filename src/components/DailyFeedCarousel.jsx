@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useEffect, useRef } from 'react';
-import feedData from '../commonComponents/feedData';  
+import feedData from './utils/const';
 const DailyFeedCarousel = ({setActivePage}) => {
   const itemsPerPage = 4;
   const totalPages = Math.ceil(feedData.length / itemsPerPage);
@@ -72,33 +72,17 @@ const DailyFeedCarousel = ({setActivePage}) => {
   };
   return (
     <div>
-      <div
-        className="carousel-container"
-        style={{ overflow: "hidden", width: "100%" }}
-      >
+      <div className="carousel-container overflow-hidden w-full">
         <h2
-          style={{
-            fontFamily:
-              '"Playfair Display", Georgia, Times, "Century Schoolbook L"',
-          }}
           className="font-bold text-2xl text-left text-textSecondary pt-10 italic pb-2"
+          style={{ fontFamily: "Playfair Display" }}
         >
           Daily Feed
         </h2>
-        <div className="mt-2 mb-9">
-          <hr
-            style={{
-              borderTop: "2px solid var(--primaryUpperNavbarLine)",
-              borderBottom: "none",
-            }}
-          />
+        <div className="mt-2 mb-4">
+          <hr className="border-t-2 border-[var(--primaryUpperNavbarLine)] border-b-0" />
           <div style={{ height: "2px" }}></div>
-          <hr
-            style={{
-              borderBottom: "1px solid var(--primaryUpperNavbarLine)",
-              borderTop: "none",
-            }}
-          />
+          <hr className="border-b border-[var(--primaryUpperNavbarLine)] border-t-0" />
         </div>
         <div
           className="flex transition-transform duration-500"
@@ -109,47 +93,24 @@ const DailyFeedCarousel = ({setActivePage}) => {
           onMouseLeave={handleMouseUp}
         >
           {Array.from({ length: totalPages }).map((_, pageIndex) => (
-            <div
-              key={pageIndex}
-              style={{
-                minWidth: "100%",
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
+            <div key={pageIndex} className="min-w-full flex flex-col">
               {feedData
                 .slice(pageIndex * itemsPerPage, (pageIndex + 1) * itemsPerPage)
                 .map((feed, index) => (
                   <div
                     key={index}
-                    style={{
-                      textAlign: "left",
-                      padding: "20px 10px",
-                      borderBottom: "1px solid var(--primaryUpperNavbarLine)",
-                    }}
+                    className="text-left p-[10px_10px] border-b border-primaryUpperNavbarLine"
                   >
-                    <p
-                      className="text-gray 300 text-textSecondary text-xs uppercase"
-                      style={{ fontFamily: 'Times, "Times New Roman", serif' }}
-                    >
+                    <p className="text-gray text-textSecondary text-xs uppercase font-times">
                       IN {feed.category}{" "}
                     </p>
                     <h3
                       onClick={() => setActivePage("NewsData")}
-                      style={{
-                        fontFamily:
-                          'Oswald, Helvetica, "Nimbus Sans L", sans-serif',
-                        fontWeight: 800,
-                        fontWeight: "bold",
-                      }}
-                      className=" text-textSecondary text-lg cursor-pointer hover:underline"
+                      className="text-textSecondary text-lg cursor-pointer hover:underline font-oswald font-extrabold"
                     >
                       {feed.title}
                     </h3>
-                    <p
-                      style={{ fontFamily: 'Times, "Times New Roman", serif' }}
-                      className="text-gray-700 text-textSecondary"
-                    >
+                    <p className="text-gray-700 text-textSecondary font-times">
                       {feed.desc}
                     </p>
                   </div>

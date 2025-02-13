@@ -1,73 +1,54 @@
+import React from "react";
+import { footerData } from "../../components/utils/const";
+
 const Footer = () => {
   return (
-    <div className="bg-gray-50 py-10 px-5 border-t border-black">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-black">
-          <div>
-            <h2 className="text-3xl font-bold italic">
-              The <span className="font-extrabold">NEWSPAPER</span>
-            </h2>
-            <ul className="mt-4 space-y-2 italic">
-              <li>Reader Center</li>
-              <li>Tools & Services</li>
-              <li>Times Topics</li>
-              <li>T.N. Events Guide</li>
-              <li>Times Journeys</li>
-              <li>Subscribe The Newspaper</li>
-              <li>Our Contacts</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-bold uppercase">News</h3>
-            <ul className="mt-4 space-y-2 italic">
-              <li>Arts</li>
-              <li>Economy</li>
-              <li>Fashion & Style</li>
-              <li>Food</li>
-              <li>Health</li>
-              <li>Lifestyle</li>
-              <li>Politics</li>
-              <li>Science</li>
-              <li>Sports</li>
-              <li>Technology</li>
-              <li>Travel</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-bold uppercase">Opinion</h3>
-            <ul className="mt-4 space-y-2 italic">
-              <li>Today's Opinion</li>
-              <li>Op-Ed Columnists</li>
-              <li>Editorials</li>
-              <li>Contributing Writers</li>
-              <li>Op-Ed Contributors</li>
-              <li>Opinionator</li>
-              <li>Letters</li>
-              <li>Sunday Review</li>
-              <li>Taking Note</li>
-              <li>Room for Debate</li>
-              <li>Public Editor</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-bold uppercase">Most Popular</h3>
-            <ul className="mt-4 space-y-2 italic">
-              <li>Art & Design</li>
-              <li>World</li>
-              <li>Blog</li>
-              <li>Business</li>
-              <li>Culture</li>
-              <li>Lifestyle</li>
-              <li>N.Y.</li>
-              <li>Newspaper</li>
-              <li>Photos</li>
-              <li>Post</li>
-            </ul>
+    <div className="text-textPrimary bg-secondary text-black py-10">
+      <div
+        id="center"
+        className="text-textPrimary bg-secondary text-black py-10"
+        style={{ width: "1200px", margin: "auto" }}
+      >
+        <div
+          className="h-1 bg-black w-full"
+          style={{ border: "3px solid black" }}
+        ></div>
+        <div>
+          <div
+            className="container mx-auto flex flex-wrap justify-between px-4"
+            style={{ marginTop: "50px" }}
+          >
+            {footerData.map((section, index) => (
+              <div
+                key={index}
+                className="w-full sm:w-1/2 md:w-1/4 mb-6 md:mb-0"
+              >
+                <h3 className="text-lg font-semibold border-b-2 border-gray-700 pb-2 mb-4" style={{fontSize: '20px'}}>
+                  {section.title}
+                </h3>
+                <ul
+                  className="italic"
+                  style={{ fontFamily: "Playfair Display" }}
+                >
+                  {section.links.map((link, linkIndex) => (
+                    <li key={linkIndex} className="mb-2">
+                      <a href="#" className="hover:underline">
+                        {link}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
+        <div
+          className="h-1 bg-black w-full"
+          style={{ border: "1px solid black", marginBottom: "11px" }}
+        ></div>
+        <p style={{ paddingBottom: "10px", fontSize: "12px" }}>
+          This is a sample website - cmsmasters © 2025 / All Rights Reserved
+        </p>
       </div>
     </div>
   );

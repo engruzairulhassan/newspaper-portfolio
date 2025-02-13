@@ -5,7 +5,7 @@ import FetchCSVData from "../Apis";
 import Header from "../commonComponents/Header/page";
 import Home from '../app/Home/page'
 import ThemeMenu from "../app/TheamMenu/page";
-// import Footer from "../commonComponents/Footer/page";
+import Footer from "../commonComponents/Footer/page";
 
 function Page() {
   const [selectedTheme, setSelectedTheme] = useState("classic");
@@ -36,7 +36,7 @@ function Page() {
       />
       <div
         className="w-full max-w-7xl max-w-[1400px]"
-        style={{ marginTop: "50px" }}
+        style={{ marginTop: "50px"}}
       >
         <div className="inner-container">
           <div>
@@ -50,8 +50,8 @@ function Page() {
             activePage={activePage}
             setActivePage={setActivePage}
           />
+        <Footer/>
         </div>
-        {/* <Footer/> */}
 
       </div>
     </div>

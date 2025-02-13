@@ -3,6 +3,14 @@
 body {
   font-family: "Playfair Display", serif;
 }
+@font-face {
+  font-family: "Playfair Display";
+  src: url("/fonts/PlayfairDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 
 @tailwind base;
 @tailwind components;
@@ -53,6 +61,7 @@ h1 {
   --secondary-font: 'Arial', sans-serif;
   --selectedItemColor : #8c919b;
   --primaryLowerNavbarLine: #666666;
+  --tertiary-font: 'Playfair Display',
 }
 
 .theme-modern {
@@ -66,6 +75,7 @@ h1 {
   --primary-font: 'Roboto', sans-serif;
   --secondary-font: 'Helvetica', sans-serif;
   --selectedItemColor :#8c919b;
+   --tertiary-font: "Playfair Display"; 
 
 }
 
@@ -80,6 +90,7 @@ h1 {
   --hoverColor: #87b4da;          /* Darker red on hover */
   --primary-font: 'Georgia', serif;
   --secondary-font: 'Verdana', sans-serif;
+  --tertiary-font: 'Playfair Display',
 }
 
 

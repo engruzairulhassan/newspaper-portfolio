@@ -47,5 +47,108 @@ const feedData = [
     "When to Cook Your Vegetables Long Past “Done”",
   ];
 
-  export default feedData;
+export const pages = [
+      { name: "home", label: "HOME" },
+      { name: "politics", label: "POLITICS" },
+      { name: "technology", label: "TECHNOLOGY" },
+      { name: "sports", label: "SPORTS" },
+      { name: "fashion", label: "FASHION" },
+      { name: "food", label: "FOOD" },
+      { name: "shortcodes", label: "SHORTCODES" },
+      { name: "postTypes", label: "POST TYPES" },
+      { name: "contact", label: "CONTACT" },
+    ];
+export const posts = [
+    {
+      date: "MAY 13, 2017",
+      categories: ["LIFESTYLE", "MAIN"],
+      author: "CMSMASTERS",
+      comments: 1,
+      title: "Get the Best Catering for Your Summer Wedding in Philly",
+      excerpt:
+        "Etiam eu molestie eros, commodo nec turpis hendrerit sapien. Maecenas tempus leo ac nisi iaculis porta. Sed sapien tempus.",
+    },
+    {
+      date: "JUNE 28, 2017",
+      categories: ["MAIN", "SPORTS"],
+      author: "CMSMASTERS",
+      comments: 0,
+      title: "The Best College Football Team You’ve Probably Never Heard Of",
+      excerpt:
+        "Aenean rhoncus gravida nisl vel pretium. Nam ac nisl non ipsum vestibulum vehicula vulputate sagittis magna.",
+    },
+    {
+      date: "JULY 15, 2017",
+      categories: ["MAIN", "POLITICS"],
+      author: "CMSMASTERS",
+      comments: 0,
+      title:
+        "Sex Education Based on Abstinence? There’s a Real Absence of Evidence",
+      excerpt:
+        "Sed sapien tortor, aliquet a velit ut, lacinia molestie velit. Maecenas ornare consequat massa ullamcorper dapibus.",
+    },
+  ];
 
+
+  export const footerData = [
+      {
+        title: "NEWSPAPER",
+        links: [
+          "Reader Center",
+          "Tools & Services",
+          "Times Topics",
+          "T.N. Events Guide",
+          "Times Journeys",
+          "Subscribe The Newspaper",
+          "Our Contacts",
+        ],
+      },
+      {
+        title: "News",
+        links: [
+          "Arts",
+          "Economy",
+          "Fashion & Style",
+          "Food",
+          "Health",
+          "Lifestyle",
+          "Politics",
+          "Science",
+          "Sports",
+          "Technology",
+          "Travel",
+        ],
+      },
+      {
+        title: "Opinion",
+        links: [
+          "Today’s Opinion",
+          "Op-Ed Columnists",
+          "Editorials",
+          "Contributing Writers",
+          "Op-Ed Contributors",
+          "Opinionator",
+          "Letters",
+          "Sunday Review",
+          "Taking Note",
+          "Room for Debate",
+          "Public Editor",
+        ],
+      },
+      {
+        title: "Most Popular",
+        links: [
+          "Art & Design",
+          "World",
+          "Blog",
+          "Culture",
+          "Lifestyle",
+          "N.Y.",
+          "Newspaper",
+          "Photos",
+          "Post",
+        ],
+      },
+    ];
+
+export default feedData;

@@ -1,45 +1,64 @@
 import React from "react";
 import Image from "next/image";
+import { posts } from "../../components/utils/const";
 
 const BreakingNews = () => {
   return (
     <div
-      id="2"
-      className="col-span-1 md:col-span-6"
-      style={{ paddingLeft: "30px" }}
+      className="col-span-1 md:col-span-6 pl-[50px]"
+      style={{
+        borderLeft: "1px solid var(--primaryUpperNavbarLine",
+        paddingLeft: "60px",
+      }}
     >
       <h2
-        style={{
-          fontFamily:
-            '"Playfair Display", Georgia, Times, "Century Schoolbook L"',
-        }}
-        className="font-bold text-2xl text-textSecondary text-left pt-10 italic pb-2"
+        className="font-bold text-2xl text-textSecondary text-left pt-10 italic pb-2 font-tertiary"
+        style={{ fontFamily: "Playfair Display" }}
       >
         Breaking News
       </h2>
+      
       <div className="mt-2 mb-8">
-        <hr
-          style={{
-            borderTop: "2px solid var(--primaryUpperNavbarLine)",
-            borderBottom: "none",
-          }}
-        />
+        <hr className="border-t-2 border-[var(--primaryUpperNavbarLine)] border-b-0" />
         <div style={{ height: "2px" }}></div>
-        <hr
-          style={{
-            borderBottom: "1px solid var(--primaryUpperNavbarLine)",
-            borderTop: "none",
-          }}
-        />
+        <hr className="border-b border-[var(--primaryUpperNavbarLine)] border-t-0" />
       </div>
-      <div style={{ paddingTop: "7px" }}>
+      <div className="pt-[10px]">
         <Image
           src="/images/blog-7.jpg"
           alt="Breaking News"
           width={800}
           height={400}
-          className="w-full h-auto mb-4"
+          className="w-full h-auto"
+          style={{ paddingTop: "29px" }}
         />
+      </div>
+      <div>
+
+        <div className="max-w-3xl mx-auto mt-4">
+          {posts.map((post, index) => (
+            <div key={index} className="text-black border-b mb-6 text-left">
+              <p style={{ fontSize: "11px" }}>
+                <span className="pr-3">{post.date}</span> |{" "}
+                <span className="pr-3">{post.categories.join(", ")}</span> | BY{" "}
+                <span className="pr-3">{post.author} | </span>
+                <span className="text-gray-700 font-bold">{post.comments}</span>
+              </p>
+              <h2 className="text-xl font-bold mt-2 hover:underline">
+                {post.title}
+              </h2>
+              <p className="text-gray-600 mt-2" style={{ fontSize: "16px" }}>
+                {post.excerpt}
+              </p>
+              <a
+                href="#"
+                className="text-black mb-6 font-semibold mt-2 block pb-[20px] text-[10px]"
+              >
+                READ MORE
+              </a>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -16,26 +16,20 @@ const HomeContainer = ({ activePage, setActivePage }) => {
   return (
     <div className="parent-container">
       <div className="bg-secondary">
-        <main
-          className="bg-secondary justify-center p-3 pt-10"
-          style={{ padding: "0px 102px" }}
-        >
-          <hr
-            style={{
-              borderTop: "2px solid var(--primaryLowerNavbarLine)",
-              borderBottom: "none",
-            }}
-          />
+        <main className="bg-secondary justify-center px-[102px]">
+          <hr className="border-t-2 border-[var(--primaryLowerNavbarLine)] border-b-0" />
           <div className="flex">
             <section className="relative rounded-lg text-center">
               {activePage === "home" ? (
-                <div className="parentDiv">
-                  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-6">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[25%_45%_20%] gap-6 p-4" >
+                  <div>
                     <Articles />
+                  </div>
+                  <div>
                     <BreakingNews />
-                    <div className="col-span-1 md:col-span-3 daily-feed pl-0 md:pl-4">
-                      <DailyFeedCarousel setActivePage={setActivePage} />
-                    </div>
+                  </div>
+                  <div>
+                    <DailyFeedCarousel setActivePage={setActivePage} />
                   </div>
                 </div>
               ) : activePage === "politics" ? (

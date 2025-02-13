@@ -64,6 +64,7 @@ export default {
       fontFamily: {
         primary: ["var(--primary-font)"],
         secondary: ["var(--secondary-font)"],
+        tertiary: ["Playfair Display", "serif"],
       },
       fontSize: {
         base: "16px",
