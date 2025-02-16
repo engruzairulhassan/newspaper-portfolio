@@ -11,6 +11,10 @@ import NewsData from "../newsDetails/page";
 import DailyFeedCarousel from "../../components/DailyFeedCarousel";
 import Articles from "../../commonComponents/Articles/page";
 import BreakingNews from "../../commonComponents/BreakingNews/page";
+import RecommendedCarousel from "../../components/RecommendedCarousel/page";
+import AdvertisingSection from "../../components/AdvertisingSection/page";
+import TopSearches from "../../components/TopSearcheSection/page";
+import FeaturedStories from '../../components/FeaturedStories/page'
 
 const HomeContainer = ({ activePage, setActivePage }) => {
   return (
@@ -19,17 +23,25 @@ const HomeContainer = ({ activePage, setActivePage }) => {
         <main className="bg-secondary justify-center px-[102px]">
           <hr className="border-t-2 border-[var(--primaryLowerNavbarLine)] border-b-0" />
           <div className="flex">
-            <section className="relative rounded-lg text-center">
+            <section className="rounded-lg text-center w-full">
               {activePage === "home" ? (
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[25%_45%_20%] gap-6 p-4" >
-                  <div>
+                <div className="max-w-7xl mx-auto  flex flex-col-reverse lg:grid lg:grid-cols-[30%_70%] lg:grid-cols-[20%_70%] gap-6 p-4">
+                  <div className="space-y-4 overflow-hidden">
                     <Articles />
+                    <RecommendedCarousel />
+                    <AdvertisingSection />
+                    <TopSearches />
                   </div>
-                  <div>
-                    <BreakingNews />
-                  </div>
-                  <div>
-                    <DailyFeedCarousel setActivePage={setActivePage} />
+                  <div id="second">
+                    <div className="flex flex-col md:flex-row w-full">
+                      <div className="w-full lg:w-[65%] pl-0 lg:pl-10">
+                        <BreakingNews />
+                      </div>
+                      <div className="w-full lg:w-[35%] pl-0 lg:pl-10 mt-6 lg:mt-0 max-[1022px]:pl-[60px]">
+                        <DailyFeedCarousel setActivePage={setActivePage} />
+                      </div>
+                    </div>
+                    <FeaturedStories />
                   </div>
                 </div>
               ) : activePage === "politics" ? (

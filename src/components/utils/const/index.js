@@ -58,6 +58,7 @@ export const pages = [
       { name: "postTypes", label: "POST TYPES" },
       { name: "contact", label: "CONTACT" },
     ];
+
 export const posts = [
     {
       date: "MAY 13, 2017",
@@ -83,12 +84,11 @@ export const posts = [
       author: "CMSMASTERS",
       comments: 0,
       title:
-        "Sex Education Based on Abstinence? There’s a Real Absence of Evidence",
+        "Education Based on Abstinence? There’s a Real Absence of Evidence",
       excerpt:
         "Sed sapien tortor, aliquet a velit ut, lacinia molestie velit. Maecenas ornare consequat massa ullamcorper dapibus.",
     },
   ];
-
 
   export const footerData = [
       {
@@ -151,4 +151,80 @@ export const posts = [
       },
     ];
 
+ export const recommendedData = [
+      {
+        image: "/images/img1.jpg",
+        title: "6 Books About The Best Bridges You Should Read",
+      },
+      {
+        image: "/images/img2.jpg",
+        title: "Amazing Architecture Wonders Around the World",
+      },
+      {
+        image: "/images/img3.jpg",
+        title: "Bridges That Changed the World Forever",
+      },
+    ];
+
+export const articles = [
+      {
+        date: "May 11, 2017",
+        category: "Health",
+        title: "The Most Fascinating Show? The Met Trying to Fix Itself",
+        description:
+          "Etiam eu molestie eros, commodo hendrerit sapien. Nunc pretium tortor felis, eget cursus magna eget nec imperdiet ornare.",
+        image: "/images/articles1.jpg",
+      },
+      {
+        date: "May 15, 2017",
+        category: "Sports",
+        title: "Liverpool Tops Hoffenheim in First Leg of Champions Playoff",
+        description:
+          "Maecenas ornare consequat massa ullamcorper dapibus. Aliquam auctor, sapien sit amet sapien. Vivamus laoreet non mauris.",
+        image: "/images/articles2.jpg",
+      },
+      {
+        date: "May 18, 2017",
+        category: "Science",
+        title: "Which New York City Subway MetroCard to Buy?",
+        description:
+          "Duis eleifend nunc sit amet mi dapibus ornare. Suspendisse non tempus vel libero sem pellentesque ornare amet.",
+        image: "/images/articles3.jpg",
+      },
+      {
+        date: "May 23, 2017",
+        category: "Arts, Politics",
+        title: "Physiological Responses to Rock Climbing in Young Climbers",
+        description:
+          "Sed nec blandit nibh. Pellentesque commodo suscipit gravida. Sed sit amet ex sed mi dignissim elementum in ut.",
+        image: "/images/articles4.jpg",
+      },
+      {
+        date: "May 24, 2017",
+        category: "Economy",
+        title:
+          "Leading Article: A Better Way to Educate Primary School Children",
+        description:
+          "Vivamus laoreet non mauris eget mattis. Nam turpis orci, consectetur vel accumsan sed, at sapien. Etiam eu molestie eros.",
+        image: "/images/articles5.jpg",
+      },
+      {
+        date: "May 28, 2017",
+        category: "Arts",
+        title: "13 Photographers Who Captured the Epic Beauty of America’s",
+        description:
+          "Nunc ut egestas neque, eu hendrerit lacus. Suspendisse fermentum congue dui nec fringilla. Duis volutpat nunc.",
+        image: "/images/articles6.jpg",
+      },
+    ];
+
+    export const categories = [
+       ["Art & Design", "Blog", "Business"],
+       ["Culture", "Economy", "Health"],
+       ["Lifestyle", "Movies", "N.Y."],
+       ["Photos", "Politics", "Post", "Science"],
+       ["Sports", "Tech", "Today's Arts"],
+       ["Travel", "U.S.", "Videos", "World"],
+     ];
+     
 export default feedData;

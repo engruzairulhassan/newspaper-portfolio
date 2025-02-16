@@ -1,7 +1,8 @@
-"use client"
-import React, { useState, useEffect, useRef } from 'react';
-import feedData from './utils/const';
-const DailyFeedCarousel = ({setActivePage}) => {
+"use client";
+import React, { useState, useEffect, useRef } from "react";
+import feedData from "./utils/const";
+
+const DailyFeedCarousel = ({ setActivePage }) => {
   const itemsPerPage = 4;
   const totalPages = Math.ceil(feedData.length / itemsPerPage);
   const [currentPage, setCurrentPage] = useState(0);
@@ -85,8 +86,11 @@ const DailyFeedCarousel = ({setActivePage}) => {
           <hr className="border-b border-[var(--primaryUpperNavbarLine)] border-t-0" />
         </div>
         <div
-          className="flex transition-transform duration-500"
-          style={{ transform: `translateX(-${currentPage * 100}%)` }}
+          className="grid transition-transform duration-500"
+          style={{
+            gridTemplateColumns: `repeat(${totalPages}, 100%)`,
+            transform: `translateX(-${currentPage * 100}%)`,
+          }}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}

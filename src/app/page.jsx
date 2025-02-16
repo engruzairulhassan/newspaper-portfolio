@@ -35,8 +35,7 @@ function Page() {
         theme={theme}
       />
       <div
-        className="w-full max-w-7xl max-w-[1400px]"
-        style={{ marginTop: "50px"}}
+        className="w-full max-w-7xl max-w-[1400px] mt-[50px]"
       >
         <div className="inner-container">
           <div>
@@ -46,13 +45,9 @@ function Page() {
               theme={theme}
             />
           </div>
-          <Home
-            activePage={activePage}
-            setActivePage={setActivePage}
-          />
-        <Footer/>
+          <Home activePage={activePage} setActivePage={setActivePage} />
+          <Footer />
         </div>
-
       </div>
     </div>
   );
