@@ -9,10 +9,8 @@ const Footer = () => {
         className="text-textPrimary bg-secondary text-black py-10"
         style={{ maxWidth: "1200px", margin: "auto" }}
       >
-        <div
-          className="h-1 bg-black w-full"
-          style={{ border: "3px solid black" }}
-        ></div>
+       <div className="h-1 bg-black w-full border-6 border-black"></div>
+
         <div>
           <div
             className="container mx-auto flex flex-wrap justify-between px-4"

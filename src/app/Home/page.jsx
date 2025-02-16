@@ -30,7 +30,9 @@ const HomeContainer = ({ activePage, setActivePage }) => {
                     <Articles />
                     <RecommendedCarousel />
                     <AdvertisingSection />
-                    <TopSearches />
+                    <div className="mytop max-[1022px]:pl-[250px] max-[963px]:pl-[200px] max-[860px]:pl-[150px] max-[730px]:pl-[100px] max-[600px]:pl-[60px] max-[550px]:pl-[10px]">
+                      <TopSearches />
+                    </div>
                   </div>
                   <div id="second">
                     <div className="flex flex-col md:flex-row w-full">
