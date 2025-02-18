@@ -7,7 +7,7 @@ const Footer = () => {
       <div
         id="center"
         className="text-textPrimary bg-secondary text-black py-10"
-        style={{ maxWidth: "1200px", margin: "auto" }}
+        style={{ maxWidth: "1077px", margin: "auto" }}
       >
         <div className="h-1 bg-black w-full border-6 border-black"></div>
         <div>

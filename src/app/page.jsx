@@ -35,7 +35,8 @@ function Page() {
         theme={theme}
       />
       <div
-        className="w-full max-w-7xl mt-[50px]"
+        className="w-full mt-[50px]"
+        style={{ maxWidth: '88rem'}}
       >
         <div className="inner-container">
           <div>
@@ -52,5 +53,4 @@ function Page() {
     </div>
   );
 }
-
 export default Page;

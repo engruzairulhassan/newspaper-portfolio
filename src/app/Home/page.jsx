@@ -18,7 +18,7 @@ import FeaturedStories from '../../components/FeaturedStories/page'
 
 const HomeContainer = ({ activePage, setActivePage }) => {
   return (
-    <div className="parent-container">
+    <div className="parent-container" >
       <div className="bg-secondary pt-2">
         <main className="bg-secondary justify-center" style={{width :"84%", margin: 'auto'}}>
           <hr className="border-t-2 t-2 border-[var(--primaryLowerNavbarLine)] border-b-0" />
