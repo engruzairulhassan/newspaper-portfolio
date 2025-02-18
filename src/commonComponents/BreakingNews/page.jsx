@@ -6,18 +6,18 @@ const BreakingNews = () => {
   return (
     <div className="col-span-1 md:col-span-6 border-l border-[var(--primaryUpperNavbarLine)] pl-[60px]">
       <h2
-        className="font-bold text-2xl text-textSecondary text-left pt-10 italic pb-2 font-tertiary max-[1022px]:mt-[22px]"
+        className="font-bold text-2xl font-bold font-tertiary text-textSecondary text-left pt-10 italic pb-2  max-[1022px]:mt-[22px]"
         style={{ fontFamily: "Playfair Display" }}
       >
         Breaking News
       </h2>
-
-      <div className="mt-2 mb-8">
-        <hr className="border-t-2 border-[var(--primaryUpperNavbarLine)] border-b-0" />
-        <div style={{ height: "2px" }}></div>
-        <hr className="border-b border-[var(--primaryUpperNavbarLine)] border-t-0" />
-      </div>
-      <div className="pt-[10px]">
+      <div className="max-[1024px]:pt-[55px]">
+        <div className="mb-8">
+          <hr className="border-t-2 border-[var(--primaryUpperNavbarLine)] border-b-0" />
+          <div style={{ height: "2px" }}></div>
+          <hr className="border-b border-[var(--primaryUpperNavbarLine)] border-t-0" />
+        </div>
+        <div className="pt-[10px]"></div>
         <Image
           src="/images/blog-7.jpg"
           alt="Breaking News"

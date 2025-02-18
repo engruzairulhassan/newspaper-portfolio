@@ -35,7 +35,7 @@ function Page() {
         theme={theme}
       />
       <div
-        className="w-full max-w-7xl max-w-[1400px] mt-[50px]"
+        className="w-full max-w-7xl mt-[50px]"
       >
         <div className="inner-container">
           <div>

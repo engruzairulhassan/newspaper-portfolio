@@ -3,17 +3,16 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { pages } from "../../components/utils/const/index";
+
 function Header({ activePage, setActivePage, theme }) {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const toggleDropdown = () => {
     setIsDropdownVisible((prevState) => !prevState);
   };
-  
   return (
     <header className="header-section">
       <h1
-        className="text-textPrimary font-bold pt-3 bg-secondary rounded text-[73px] font-black tracking-[-3px] pr-[6px] pb-[9px] leading-[1] flex items-center justify-center font-serif"
-        style={{ fontSize: "70px", fontFamily: "Playfair Display" }}
+        className="text-textPrimary font-bold font-tertiary pt-3 bg-secondary rounded text-4xl font-black tracking-[-3px] pr-[6px] pb-[9px] leading-[1] flex items-center justify-center font-serif"
       >
         <span>
           <span
@@ -87,6 +86,7 @@ function Header({ activePage, setActivePage, theme }) {
                 <path d="M10 2a8 8 0 015.293 13.707l5 5a1 1 0 01-1.414 1.414l-5-5A8 8 0 1110 2zm0 2a6 6 0 104.242 10.242A6 6 0 0010 4z" />
               </svg>
             </div>
+
             {isDropdownVisible && (
               <ul className="absolute top-16 left-0 w-full bg-white lg:hidden bg-headerBg mt-[100px] text-left">
                 {pages.map((page) => (

@@ -64,7 +64,7 @@ const RecommendedCarousel = () => {
   };
 
   return (
-    <div className="relative w-[250px] mx-auto mt-8 text-black border-t border-gray-400">
+    <div className="relative  mx-auto mt-8 text-black border-t border-gray-400">
       <h2 className="font-bold uppercase flex justify-between items-center text-[13px] pt-8">
         <span>Recommended</span>
         <div>
@@ -82,7 +82,7 @@ const RecommendedCarousel = () => {
           </button>
         </div>
       </h2>
-      <div className="flex items-center justify-between mt-2 w-[250px]">
+      <div className="flex items-center justify-between mt-2">
         <div
           className="w-full overflow-hidden"
           onMouseDown={handleMouseDown}
@@ -105,13 +105,14 @@ const RecommendedCarousel = () => {
                   src={item.image}
                   alt="Classroom Scene"
                   objectFit="cover"
-                  width={300}
+                  width={300} 
                   height={200}
-                  className="transition-transform duration-300 ease-in-out transform hover:scale-105 cursor-grab"
+                  className="w-[200px] md:w-[900px] sm:w-[900px] sm:w-[900px] transition-transform duration-300 ease-in-out transform hover:scale-105 cursor-grab"
                   onMouseDown={handleMouseDown}
                   onMouseMove={handleMouseMove}
                   onMouseUp={handleMouseUp}
                 />
+
                 <div className="flex justify-end">
                   <p className="text-sm font-medium mt-2 text-left w-full">
                     {item.title}

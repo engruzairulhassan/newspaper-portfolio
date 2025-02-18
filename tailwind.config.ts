@@ -52,6 +52,7 @@ export default {
         accent: "var(--accent)",
         "meta-white-primary": "#f9f9f9",
         "meta-white-secondary": "#D8D8D8",
+        "meta-light-black": "3a3c56",
         selectedItemColor: "var(--selectedItemColor)",
         textPrimary: "var(--textPrimary)",
         textSecondary: "var(--textSecondary)",
@@ -75,12 +76,19 @@ export default {
         xl: "24px",
         "2xl": "32px",
         "3xl": "40px",
+        custom: "50px",
+        "4xl": "70px",
       },
       fontWeight: {
         normal: "400",
         medium: "500",
         semibold: "600",
         bold: "700",
+      },
+      screens: {
+        xs: "480px", // Custom extra small breakpoint
+        md: "780px", // Changing md breakpoint to 780px
+        "custom-lg": "1100px", // Adding a new custom breakpoint
       },
     },
   },
