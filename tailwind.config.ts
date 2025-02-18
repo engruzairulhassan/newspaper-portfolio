@@ -28,6 +28,8 @@ export default {
         tertiary: ["Playfair Display", "serif"],
       },
       fontSize: {
+        xxsm: '11px',
+        xsm: '13px',
         base: "16px",
         sm: "14px",
         lg: "18px",

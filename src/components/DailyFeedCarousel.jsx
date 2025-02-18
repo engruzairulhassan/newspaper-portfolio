@@ -74,7 +74,7 @@ const DailyFeedCarousel = ({ setActivePage }) => {
   return (
     <div>
       <div className="carousel-container overflow-hidden w-full">
-        <h2
+        {/* <h2
           className="font-bold text-2xl text-left text-textSecondary pt-10 italic pb-2"
           style={{ fontFamily: "Playfair Display" }}
         >
@@ -84,7 +84,7 @@ const DailyFeedCarousel = ({ setActivePage }) => {
           <hr className="border-t-2 border-[var(--primaryUpperNavbarLine)] border-b-0" />
           <div style={{ height: "2px" }}></div>
           <hr className="border-b border-[var(--primaryUpperNavbarLine)] border-t-0" />
-        </div>
+        </div> */}
         <div
           className="grid transition-transform duration-500"
           style={{
