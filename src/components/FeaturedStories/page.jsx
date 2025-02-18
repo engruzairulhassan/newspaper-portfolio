@@ -54,9 +54,12 @@ export default function FeaturedStories() {
       <div className="relative">
         <a
           href="#"
-          className="absolute top-0 left-0 text-black font-semibold font-sm"
+          className="absolute top-0 left-0 text-black font-semibold font-sm pt-2"
           style={{ fontSize: "13px" }}
-        > VIEW MORE POSTS </a>
+        >
+          {" "}
+          VIEW MORE POSTS{" "}
+        </a>
 
         <div
           className="flex flex-col items-center justify-center"
@@ -67,12 +70,13 @@ export default function FeaturedStories() {
           </h2>
           <div
             className="flex border border-gray-300 rounded overflow-hidden max-w-md mx-auto items-center"
-            style={{ marginTop: "30px" }}
+            style={{ marginTop: "30px"}}
           >
             <input
               type="email"
+              style={{ fontFamily: "Playfair Display" }}
               placeholder="Your email address *"
-              className="px-4 w-72 h-10 focus:outline-none"
+              className="px-4 w-42 h-10 focus:outline-none max-[500px]:w-32"
             />
             <button className="bg-black text-white font-semibold text-xs px-4 h-10">
               SIGN UP

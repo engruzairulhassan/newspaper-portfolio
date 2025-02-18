@@ -9,23 +9,19 @@ const Footer = () => {
         className="text-textPrimary bg-secondary text-black py-10"
         style={{ maxWidth: "1200px", margin: "auto" }}
       >
-       <div className="h-1 bg-black w-full border-6 border-black"></div>
-
+        <div className="h-1 bg-black w-full border-6 border-black"></div>
         <div>
-          <div
-            className="container mx-auto flex flex-wrap justify-between px-4"
-            style={{ marginTop: "50px" }}
-          >
+          <div className="flex" style={{ paddingLeft: "20px" }}>
             {footerData.map((section, index) => (
               <div
                 key={index}
-                className="w-full sm:w-1/2 md:w-1/4 mb-6 md:mb-0"
+                className="w-full pt-10"
               >
                 {section.title === "NEWSPAPER" ? (
                   <h3
                     className="font-bold text-black text-[35px] font-playfair leading-none flex flex-col items-start"
                     style={{
-                      fontSize: "35px",
+                      fontSize: "30px",
                       fontFamily: "Playfair Display, serif",
                     }}
                   >
@@ -33,8 +29,7 @@ const Footer = () => {
                       className="italic text-gray-400 font-playfair block pl-8"
                       style={{
                         fontSize: "20px",
-                        paddingLeft: "9px",
-                        paddingLeft: '20px',
+                        paddingLeft: "20px",
                         lineHeight: "1",
                         marginBottom: "-5px",
                       }}
@@ -43,7 +38,10 @@ const Footer = () => {
                     </span>
                     <span
                       className="font-extrabold"
-                      style={{ lineHeight: "1" }}
+                      style={{
+                        lineHeight: "1",
+                        textShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
+                      }}
                     >
                       NEWSPAPER
                     </span>
@@ -74,7 +72,7 @@ const Footer = () => {
         </div>
         <div
           className="h-1 bg-black w-full"
-          style={{ border: "1px solid black", marginBottom: "11px" }}
+          style={{ border: "1px solid black" , marginBottom: "11px" }}
         ></div>
         <p style={{ paddingBottom: "10px", fontSize: "12px" }}>
           This is a sample website - cmsmasters © 2025 / All Rights Reserved

@@ -3,12 +3,12 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { pages } from "../../components/utils/const/index";
+
 function Header({ activePage, setActivePage, theme }) {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const toggleDropdown = () => {
     setIsDropdownVisible((prevState) => !prevState);
   };
-  
   return (
     <>
       <div className="title">
@@ -77,6 +77,7 @@ function Header({ activePage, setActivePage, theme }) {
                 <path d="M10 2a8 8 0 015.293 13.707l5 5a1 1 0 01-1.414 1.414l-5-5A8 8 0 1110 2zm0 2a6 6 0 104.242 10.242A6 6 0 0010 4z" />
               </svg>
             </div>
+
             {isDropdownVisible && (
               <ul className="absolute top-16 left-0 w-full bg-white lg:hidden bg-headerBg mt-[100px] text-left">
                 {pages.map((page) => (
