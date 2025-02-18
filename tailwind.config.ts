@@ -1,42 +1,4 @@
 import type { Config } from "tailwindcss";
-const blueTheme = {
-  colors: {
-    background: '#FAF9F6',
-    text: '#3D3D3D',
-    headerBg: '#2A2A72',
-    accent: '#9C27B0',
-    border: '#D4D4D4',
-  },
-};
-
-const defaultTheme = {
-  colors: {
-    background: "#F4F4F4",
-    text: "#000000",
-    headerBg: "#FFFFFF",
-  },
-};
-
-
-const redTheme = {
-  colors: {
-    background: "#F5F5DC",
-    text: "#3E2723",
-    headerBg: "#795548",
-    accent: "#8D6E63",
-    border: "#D7CCC8",
-  },
-};
-
-const greenTheme = {
-  colors: {
-    background: "#E8F5E9",
-    text: "#1B5E20",
-    headerBg: "#004D40",
-    accent: "#FFEB3B",
-    border: "#B2DFDB",
-  },
-};
 
 export default {
   content: [
@@ -58,10 +20,6 @@ export default {
         primaryUpperNavbarLine: "var(--primaryUpperNavbarLine)",
         hoverColor: "var(--hoverColor)",
         primaryLowerNavbarLine: "var(--primaryLowerNavbarLine)",
-        ...blueTheme.colors,
-        ...defaultTheme.colors,
-        ...redTheme.colors,
-        ...greenTheme.colors,
       },
       fontFamily: {
         primary: ["var(--primary-font)"],

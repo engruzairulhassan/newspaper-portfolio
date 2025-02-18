@@ -19,7 +19,7 @@ function Page() {
   };
 
   useEffect(() => {
-    FetchCSVData();
+    // FetchCSVData();
   }, []);
 
   return (
@@ -34,20 +34,17 @@ function Page() {
         handleThemeChange={handleThemeChange}
         theme={theme}
       />
-      <div
-        className="w-full max-w-7xl max-w-[1400px] mt-[50px]"
-      >
-        <div className="inner-container">
-          <div>
-            <Header
-              activePage={activePage}
-              setActivePage={setActivePage}
-              theme={theme}
-            />
-          </div>
-          <Home activePage={activePage} setActivePage={setActivePage} />
-          <Footer />
-        </div>
+      <div className="inner-container">
+      <div className="title">
+        <span>
+          <span className="title-first">T</span>
+          <span className="title-space">HE</span>
+          <span className="title-first">N</span>
+          <span>EWSPAPER</span>
+        </span>
+      </div>
+        {/* <Home activePage={activePage} setActivePage={setActivePage} />
+        <Footer /> */}
       </div>
     </div>
   );

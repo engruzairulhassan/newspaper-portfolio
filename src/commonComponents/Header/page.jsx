@@ -10,26 +10,16 @@ function Header({ activePage, setActivePage, theme }) {
   };
   
   return (
-    <header className="header-section">
-      <h1
-        className="text-textPrimary font-bold pt-3 bg-secondary rounded text-[73px] font-black tracking-[-3px] pr-[6px] pb-[9px] leading-[1] flex items-center justify-center font-serif"
-        style={{ fontSize: "70px", fontFamily: "Playfair Display" }}
-      >
+    <>
+      <div className="title">
         <span>
-          <span
-            style={{
-              fontSize: "1.15em",
-              marginRight: "-4px",
-            }}
-          >
-            T
-          </span>
-          <span style={{ marginRight: "9px" }}>HE</span>
-          <span style={{ fontSize: "1.15em", marginRight: "-4px" }}>N</span>
+          <span className="title-first">T</span>
+          <span className="title-space">HE</span>
+          <span className="title-first">N</span>
           <span>EWSPAPER</span>
         </span>
-      </h1>
-      <div className="w-full">
+      </div>
+      {/* <div className="w-full">
         <nav className="py-2 text-textPrimary font-bold pt-10 bg-secondary rounded">
           <div style={{ padding: "0px 100px" }}>
             <hr
@@ -102,8 +92,8 @@ function Header({ activePage, setActivePage, theme }) {
             )}
           </div>
         </nav>
-      </div>
-    </header>
+      </div> */}
+    </>
   );
 }
 
