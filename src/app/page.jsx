@@ -1,11 +1,12 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import { getTheme } from "../app/styles/themes/index";
 import FetchCSVData from "../Apis";
 import Header from "../commonComponents/Header/page";
 import Home from '../app/Home/page'
 import ThemeMenu from "../app/TheamMenu/page";
 import Footer from "../commonComponents/Footer/page";
+import Politics from "../app/Politics/page"
 
 function Page() {
   const [selectedTheme, setSelectedTheme] = useState("classic");
@@ -18,9 +19,9 @@ function Page() {
     setIsDropdownOpen(false);
   };
 
-  useEffect(() => {
-    // FetchCSVData();
-  }, []);
+  // useEffect(() => {
+  //   // FetchCSVData();
+  // }, []);
 
   return (
     <div
@@ -34,17 +35,18 @@ function Page() {
         handleThemeChange={handleThemeChange}
         theme={theme}
       />
+
       <div className="inner-container">
-      <div className="title">
-        <span>
-          <span className="title-first">T</span>
-          <span className="title-space">HE</span>
-          <span className="title-first">N</span>
-          <span>EWSPAPER</span>
-        </span>
-      </div>
-        {/* <Home activePage={activePage} setActivePage={setActivePage} />
-        <Footer /> */}
+        <h1 className=""></h1>
+        <Header activePage={activePage} setActivePage={setActivePage} />
+        <div>
+          {activePage === "home" ? (
+            <Home activePage={activePage} setActivePage={setActivePage} />
+          ) : (
+            <Politics activePage={activePage} setActivePage={setActivePage} />
+          )}
+          <Footer />
+        </div>
       </div>
     </div>
   );

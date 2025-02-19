@@ -9,10 +9,10 @@ const RecommendedCarousel = () => {
   const startXRef = useRef(0);
   const isDraggingRef = useRef(false);
 
-  useEffect(() => {
-    startAutoMove();
-    return () => stopAutoMove();
-  }, []);
+  // useEffect(() => {
+  //   startAutoMove();
+  //   return () => stopAutoMove();
+  // }, []);
 
   const startAutoMove = () => {
     stopAutoMove();

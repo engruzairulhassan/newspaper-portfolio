@@ -19,7 +19,7 @@ function Header({ activePage, setActivePage, theme }) {
           <span>EWSPAPER</span>
         </span>
       </div>
-      {/* <div className="w-full">
+      <div className="w-full">
         <nav className="py-2 text-textPrimary font-bold pt-10 bg-secondary rounded">
           <div style={{ padding: "0px 100px" }}>
             <hr
@@ -77,7 +77,6 @@ function Header({ activePage, setActivePage, theme }) {
                 <path d="M10 2a8 8 0 015.293 13.707l5 5a1 1 0 01-1.414 1.414l-5-5A8 8 0 1110 2zm0 2a6 6 0 104.242 10.242A6 6 0 0010 4z" />
               </svg>
             </div>
-
             {isDropdownVisible && (
               <ul className="absolute top-16 left-0 w-full bg-white lg:hidden bg-headerBg mt-[100px] text-left">
                 {pages.map((page) => (
@@ -93,7 +92,10 @@ function Header({ activePage, setActivePage, theme }) {
             )}
           </div>
         </nav>
-      </div> */}
+        <div className="mt-2">
+          <hr className="border-t-1 t-2 border-[var(--primaryLowerNavbarLine)] mb-8 border-b-0" style={{width: '83%' ,margin: 'auto'}} />
+        </div>
+      </div>
     </>
   );
 }

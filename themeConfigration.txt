@@ -1,0 +1,147 @@
+Adding custom styles in Tailwindcss
+
+
+1 - Customizing your theme:
+        If you want to change things like your color palette, spacing scale, typography scale, or breakpoints, add your customizations using the @theme directive in your CSS:
+        @theme {
+            --font-display: "Satoshi", "sans-serif";
+            --breakpoint-3xl: 1920px;
+            --color-avocado-100: oklch(0.99 0 0);
+            --color-avocado-200: oklch(0.98 0.04 113.22);
+            --color-avocado-300: oklch(0.94 0.11 115.03);
+            --color-avocado-400: oklch(0.92 0.19 114.08);
+            --color-avocado-500: oklch(0.84 0.18 117.33);
+            --color-avocado-600: oklch(0.53 0.12 118.34);
+            --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+            --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+            /* ... */
+        }
+
+2 - Using arbitrary values: 
+        When you find yourself really needing something like top: 117px to get a background image in just the right spot, use Tailwind's square bracket notation to generate a class on the fly with any arbitrary value:
+
+             <div class="top-[117px]">
+                  <!-- ... -->
+             </div>
+            <div class="top-[117px] lg:top-[344px]">
+                <!-- ... -->
+            </div>
+            <div class="fill-(--my-brand-color) ...">
+                <!-- ... -->
+            </div>
+
+
+3  - Arbitrary variants
+        Arbitrary variants are like arbitrary values but for doing on-the-fly selector modification, like you can with built-in pseudo-class variants like hover:{utility} or responsive variants like md:{utility} but using square bracket notation directly in your HTML.
+        <ul role="list">
+            {#each items as item}
+            <li class="lg:[&:nth-child(-n+3)]:hover:underline">{item}</li>
+            {/each}
+        </ul>
+
+4 - Handling whitespace
+        When an arbitrary value needs to contain a space, use an underscore (_) instead and Tailwind will automatically convert it to a space at build-time:
+            <div class="grid grid-cols-[1fr_500px_2fr]">
+                <!-- ... -->
+             </div>
+
+5 - Resolving ambiguities
+        Many utilities in Tailwind share a common namespace but map to different CSS properties. For example text-lg and text-black both share the text- namespace, but one is for font-size and the other is for color
+
+        <!-- Will generate a font-size utility -->
+        <div class="text-[22px]">...</div>
+        <!-- Will generate a color utility -->
+        <div class="text-[#bada55]">...</div>
+
+
+6 - Using custom CSS
+        While Tailwind is designed to handle the bulk of your styling needs, there is nothing stopping you from just writing plain CSS when you need to:
+
+            @import "tailwindcss";
+            .my-custom-style {
+            /* ... */
+            }
+
+7 -  Adding base styles
+            If you just want to set some defaults for the page (like the text color, background color, or font family), the easiest option is just adding some classes to the html or body elements:
+            <!doctype html>
+            <html lang="en" class="bg-gray-100 font-serif text-gray-900">
+            <!-- ... -->
+            </html>
+8 - Adding custom utilities
+            1 - Simple utilities
+                In addition to using the utilities that ship with Tailwind, you can also add your own custom utilities. This can be useful when there's a CSS feature you'd like to use in your project that Tailwind doesn't include utilities for out of the box.
+                Use the @utility directive to add a custom utility to your project:
+
+                @utility content-auto {
+                content-visibility: auto;
+                }
+                <div class="content-auto">
+                <!-- ... -->
+                </div>
+
+
+            2 - Complex utilities
+                If your custom utility is more complex than a single class name, use nesting to define the utility:
+                        @utility scrollbar-hidden {
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+                }
+
+            3 - Functional utilities
+                In addition to registering simple utilities with the @utility directive, you can also register functional utilities that accept an argument:
+                            @utility tab-* {
+                                    tab-size: --value(--tab-size-*);
+                        }
+                            @theme {
+                            --tab-size-2: 2;
+                            --tab-size-4: 4;
+                            --tab-size-github: 8;
+                            }
+                            @utility tab-* {
+                            tab-size: --value(--tab-size-*);
+                            }
+
+            4 - Bare values
+                        To resolve the value as a bare value, use the --value({type}) syntax, where {type} is the data type you want to validate the bare value as:
+                            @utility tab-* {
+                            tab-size: --value(integer);
+                            }
+
+            5 - Arbitrary values
+                    To support arbitrary values, use the --value([{type}]) syntax (notice the square brackets) to tell Tailwind which types are supported as an arbitrary value:
+                                @utility tab-* {
+                    tab-size: --value([integer]);
+                    }
+
+            6 -  Negative values
+                    To support negative values, register separate positive and negative utilities into separate declarations:
+                    @utility inset-* {
+                        inset: calc(var(--spacing) * --value([percentage], [length]));
+                        }
+
+            7 - Modifiers
+                Modifiers are handled using the --modifier() function which works exactly like the --value() function but operates on a modifier if present:
+                        @utility text-* {
+                    font-size: --value(--text-*, [length]);
+                    line-height: --modifier(--leading-*, [length], [*]);
+                    }
+            8 - Fractions
+                            To handle fractions, we rely on the CSS ratio data type. If this is used with --value(), it's a signal to Tailwind to treat the value and modifier as a single value:
+                        @utility aspect-* {
+                aspect-ratio: --value(--aspect-ratio-*, ratio, [ratio]);
+                }
+
+        9 -  Adding custom variants
+                    Use the @variant directive to apply a Tailwind variant within custom CSS:
+                    .my-element {
+                        background: white;
+                        @variant dark {
+                            background: black;
+                        }
+                        }
+
+
+
+

@@ -9,12 +9,13 @@ const ThemeMenu = ({
   theme,
 }) => {
   return (
-    <div className="absolute text-black top-4 right-4 z-50">
+    <div className="theme-container">
       <div
-        className="relative bg-secondary flex items-center justify-center w-10 h-10 rounded-full shadow-md cursor-pointer"
+        className="theme-button"
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
       >
-        <div className="absolute inset-0 flex items-center justify-center">
+        {/* style={{ border: "1px solid gray" }} */}
+        <div className="icon-wrapper">
           <FontAwesomeIcon
             icon={faChevronDown}
             className="text-xs sm:text-sm md:text-base"
@@ -22,11 +23,11 @@ const ThemeMenu = ({
         </div>
       </div>
       {isDropdownOpen && (
-        <div className="absolute border rounded mt-2 w-40 shadow-md right-0">
+        <div className="dropdown-container">
           {["classic", "modern", "bold"].map((themeName) => (
             <button
               key={themeName}
-              className="flex items-center justify-between w-full text-left p-2 hover:bg-gray-100"
+              className="button-wrapper"
               onClick={() => handleThemeChange(themeName)}
             >
               <span>

@@ -6,7 +6,7 @@ const BreakingNews = () => {
   return (
     <div className="col-span-1 md:col-span-6 border-l border-[var(--primaryUpperNavbarLine)] pl-[60px]">
       <h2
-        className="font-bold text-2xl font-bold font-tertiary text-textSecondary text-left pt-10 italic pb-2  max-[1022px]:mt-[22px]"
+        className="font-bold text-2xl font-bold font-tertiary text-textSecondary text-left pt-5 italic pb-2  max-[1022px]:mt-[22px]"
         style={{ fontFamily: "Playfair Display" }}
       >
         Breaking News
@@ -26,6 +26,7 @@ const BreakingNews = () => {
           className="w-full h-auto pt-[29px]"
         />
       </div>
+
       <div>
         <div className="max-w-3xl mx-auto mt-4">
           {posts.map((post, index) => (
@@ -36,16 +37,17 @@ const BreakingNews = () => {
                 <span className="pr-3">{post.author} | </span>
                 <span className="text-gray-700 font-bold">{post.comments}</span>
               </p>
-              <h2 className="text-xl font-bold mt-2 hover:underline">
-                {post.title}
-              </h2>
-              <p className="text-gray-600 mt-2 text-[16px]">{post.excerpt}</p>
-              <a
-                href="#"
-                className="text-black mb-6 font-semibold mt-2 block pb-[20px] text-[10px]"
-              >
-                READ MORE
-              </a>
+
+                <h2 className="text-xl font-bold mt-2 hover:underline">
+                  {post.title}
+                </h2>
+                <p className="text-gray-600 mt-2 text-[16px]">{post.excerpt}</p>
+                <a
+                  href="#"
+                  className="text-black mb-6 font-semibold mt-2 block pb-[20px] text-[10px]"
+                >
+                  READ MORE
+                </a>
             </div>
           ))}
         </div>

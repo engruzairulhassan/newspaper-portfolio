@@ -11,10 +11,10 @@ const DailyFeedCarousel = ({ setActivePage }) => {
   const isDraggingRef = useRef(false);
   const intervalRef = useRef(null);
 
-  useEffect(() => {
-    startAutoMove();
-    return () => stopAutoMove();
-  }, [totalPages]);
+  // useEffect(() => {
+  //   startAutoMove();
+  //   return () => stopAutoMove();
+  // }, [totalPages]);
 
   const startAutoMove = () => {
     stopAutoMove();
