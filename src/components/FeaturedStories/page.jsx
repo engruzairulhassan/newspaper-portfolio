@@ -28,9 +28,7 @@ export default function FeaturedStories({activePage}) {
     ];
 
   return (
-    <section
-      className="max-w-6xl mx-auto py-12 px-4 text-black"
-    >
+    <section className="max-w-6xl mx-auto py-12 px-4 text-black">
       {activeCategories.includes(activePage) && (
         <div>
           <div className="grid xl:grid-cols-3 lg:grid-cols-1 gap-6 mt-6 max-w-screen-xl mx-auto px-4">
@@ -61,7 +59,9 @@ export default function FeaturedStories({activePage}) {
         </div>
       )}
 
-      <hr className="border-t-2 border-[var(--primaryLowerNavbarLine)] mt-16" />
+      {activePage === "home" && (
+        <hr className="border-t-2 border-[var(--primaryLowerNavbarLine)] mt-16" />
+      )}
       <div className="relative mt-4">
         <a
           href="#"
@@ -71,21 +71,26 @@ export default function FeaturedStories({activePage}) {
         </a>
       </div>
 
-      <div className="flex flex-col items-center justify-center h-48">
-        <h2 className="text-lg font-semibold mb-2 text-center">
-          Sign up for the Spotlight Newsletter:
-        </h2>
-        <div className="flex flex-col sm:flex-row border border-gray-300 rounded overflow-hidden max-w-md w-full mx-auto items-center mt-6">
-          <input
-            type="email"
-            placeholder="Your email address *"
-            className="px-4 w-full sm:w-42 h-10 focus:outline-none text-center sm:text-left"
-          />
-          <button className="bg-black text-white font-semibold text-xs px-4 h-10 w-full sm:w-auto">
-            SIGN UP
-          </button>
+      {activePage === "home" && (
+        <div className="flex flex-col items-center justify-center h-48">
+          <h2 className="text-lg font-semibold mb-2 text-center">
+            Sign up for the Spotlight Newsletter:
+          </h2>
+          <div
+            className="flex flex-col sm:flex-row border border-gray-300 rounded overflow-hidden max-w-md -auto items-center mt-6"
+            style={{ width: "300px" }}
+          >
+            <input
+              type="email"
+              placeholder="Your email address *"
+              className="px-4 w-full sm:w-42 h-10 focus:outline-none text-center sm:text-left"
+            />
+            <button className="bg-black text-white font-semibold text-xs px-4 h-10 w-full sm:w-auto">
+              SIGN UP
+            </button>
+          </div>
         </div>
-      </div>
+      )}
     </section>
   );
 }

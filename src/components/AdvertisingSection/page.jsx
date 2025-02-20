@@ -5,8 +5,8 @@ const AdvertisingSection = () => {
       <h2 className="text-sm font-semibold text-gray-700 uppercase mb-2">
         Advertising
       </h2>
-      <div className="w-[240px] h-[400px] bg-meta-white-primary flex items-center justify-center text-meta-white-secondary font-bold text-[23px] font-[time]">
-        <h2 className="font-[Georgia,Times,'Century Schoolbook L',serif]">
+      <div className="w-[240px] h-[400px] bg-meta-white-primary flex items-center justify-center text-meta-white-secondary font-bold text-[23px]">
+        <h2 className="font-[Georgia,Times,'Century Schoolbook L',serif] text-gray-300">
           {" "}
           VERTICAL <br /> RECTANGLE <br /> (240X400){" "}
         </h2>
@@ -14,5 +14,5 @@ const AdvertisingSection = () => {
     </div>
   );
 };
-
+// 
 export default AdvertisingSection;

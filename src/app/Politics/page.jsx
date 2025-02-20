@@ -108,7 +108,10 @@ const page = ({activePage}) => {
                 <p className="text-black text-left text-xxsm mt-4">
                   MAY 23, 2017 | ARTS, POLITICS | BY CMSMASTERS
                 </p>
-                <h2 className="text-xl hover:underline font-bold text-black text-left mt-2">
+                <h2
+                  className="text-xl hover:underline font-bold text-black text-left mt-2"
+                  style={{ fontFamily: "Playfair Display" }}
+                >
                   Physiological Responses to Rock Climbing in Young Climbers
                 </h2>
                 <p className="text-black text-base font-normal text-left mt-2">
@@ -132,7 +135,9 @@ const page = ({activePage}) => {
                       <div className="max-w-3xl mx-auto text-black border-b mb-3 text-left">
                         <p className="text-[11px]">
                           <span className="pr-3">{post.date}</span> |{" "}
-                          <span className="pr-3">
+                          <span
+                            className="pr-3 font-playfair"
+                          >
                             {post.categories.join(", ")}
                           </span>{" "}
                           | BY <span className="pr-3">{post.author} | </span>
@@ -140,10 +145,15 @@ const page = ({activePage}) => {
                             {post.comments}
                           </span>
                         </p>
-                        <h2 className="text-xl font-bold mt-2 hover:underline">
+                        <h2
+                          className="text-xl font-bold mt-2 hover:underline"
+                          style={{
+                            fontFamily: "Playfair Display",
+                          }}
+                        >
                           {post.title}
                         </h2>
-                        <p className="text-gray-600 mt-2 text-[16px]">
+                        <p className="text-gray-600 font-normal mt-2 text-[16px]">
                           {post.excerpt}
                         </p>
                         <a
@@ -180,12 +190,11 @@ const page = ({activePage}) => {
 
             <div className="mt-10 text-left">
               <h3 className="text-gray-500 text-xs uppercase">Opinion</h3>
-              <ul
-                className="mt-2 space-y-1 text-sm italic text-gray-700 font-playfair"
-                // style={{ fontFamily: "t" }}
-              >
+              <ul className="mt-2 space-y-1 text-sm italic text-gray-700 font-playfair">
                 {activePageData.opinion.map((topic, index) => (
-                  <li key={index}>{topic}</li>
+                  <li className="pt-2" key={index}>
+                    {topic}
+                  </li>
                 ))}
               </ul>
             </div>

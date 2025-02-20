@@ -20,7 +20,7 @@ const Footer = () => {
               <div key={index} className="w-full md:w-1/2 lg:w-1/4 pt-10 px-4">
                 {section.title === "NEWSPAPER" ? (
                   <h3
-                    className="font-bold text-black text-[35px] font-playfair leading-none flex flex-col items-start"
+                    className="font-bold text-gray-800 text-[35px] font-playfair leading-none flex flex-col items-start"
                     style={{
                       fontSize: "30px",
                       fontFamily: "Playfair Display, serif",
@@ -37,32 +37,23 @@ const Footer = () => {
                     >
                       The
                     </span>
-                    <span
-                      className="font-extrabold"
-                      style={{
-                        lineHeight: "1",
-                        textShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
-                      }}
-                    >
+                    <span className="font-extrabold leading-none pb-6">
                       NEWSPAPER
                     </span>
                   </h3>
                 ) : (
-                  <h3
-                    className="text-lg font-semibold pb-2 mb-4"
-                    style={{ fontSize: "20px" }}
-                  >
+                  <h3 className="text-lg font-semibold pb-2 mb-4 text-[17px]">
                     {section.title}
                   </h3>
                 )}
                 <ul
-                  className="italic"
-                  style={{ fontFamily: "Playfair Display", marginTop: "40px" }}
+                  className="italic mt-30"
+                  style={{ fontFamily: "Playfair Display" }}
                 >
                   {section.links.map((link, linkIndex) => (
                     <li key={linkIndex} className="mb-2">
                       <a href="#" className="hover:underline">
-                        {link}
+                        <p className="text-gray-500 text-base">{link}</p>
                       </a>
                     </li>
                   ))}
@@ -70,11 +61,10 @@ const Footer = () => {
               </div>
             ))}
           </div>
-          
         </div>
         <div
           className="h-1 bg-black w-full"
-          style={{marginBottom: "11px" }}
+          style={{ marginBottom: "11px" }}
         ></div>
         <p style={{ paddingBottom: "10px", fontSize: "12px" }}>
           This is a sample website - cmsmasters © 2025 / All Rights Reserved

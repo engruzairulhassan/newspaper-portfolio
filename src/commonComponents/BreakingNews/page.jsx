@@ -38,16 +38,19 @@ const BreakingNews = () => {
                 <span className="text-gray-700 font-bold">{post.comments}</span>
               </p>
 
-                <h2 className="text-xl font-bold mt-2 hover:underline">
-                  {post.title}
-                </h2>
-                <p className="text-gray-600 mt-2 text-[16px]">{post.excerpt}</p>
-                <a
-                  href="#"
-                  className="text-black mb-6 font-semibold mt-2 block pb-[20px] text-[10px]"
-                >
-                  READ MORE
-                </a>
+              <h2
+                className="text-xl font-bold mt-2 hover:underline"
+                style={{ fontFamily: "Playfair Display" }}
+              >
+                {post.title}
+              </h2>
+              <p className="text-gray-600 mt-2 text-[16px]">{post.excerpt}</p>
+              <a
+                href="#"
+                className="text-black mb-6 font-semibold mt-2 block pb-[20px] text-[10px]"
+              >
+                READ MORE
+              </a>
             </div>
           ))}
         </div>
