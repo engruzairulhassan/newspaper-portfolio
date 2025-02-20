@@ -55,6 +55,10 @@ const tailwindConfig: Config = {
         "custom-lg": "1100px",
         "3xl": "1920px",
       },
+      padding: {
+        "50": "12.5rem", 
+        "58": "14.5rem",
+      },
     },
   },
   plugins: [],

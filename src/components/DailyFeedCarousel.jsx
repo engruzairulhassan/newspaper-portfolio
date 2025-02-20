@@ -99,7 +99,7 @@ const DailyFeedCarousel = ({ setActivePage }) => {
                     </p>
                     <h3
                       onClick={() => setActivePage("politics")}
-                      className="text-textSecondary text-lg cursor-pointer hover:underline font-oswald font-extrabold"
+                      className="text-textSecondary lg:text-lg cursor-pointer hover:underline font-oswald font-extrabold  md:text-base sm:text-sm"
                       style={{
                         fontFamily: "Playfair Display",
                       }}

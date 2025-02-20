@@ -11,7 +11,7 @@ import FeaturedStories from '../../components/FeaturedStories/page'
 const HomeContainer = ({ activePage, setActivePage }) => {
   console.log("activePage", activePage);
   return (
-    <div className="parent-container">
+    <div>
       <div className="bg-secondary pt-2">
         <main
           className="bg-secondary justify-center"
@@ -35,22 +35,22 @@ const HomeContainer = ({ activePage, setActivePage }) => {
                     <div className="w-full lg:w-[65%] pt-2 lg:pl-10">
                       <BreakingNews />
                     </div>
-                    <div className="w-full lg:w-[35%] pl-0 lg:pl-10 lg:mt-0 max-[1022px]:pl-[60px]">
-                        <h2
-                             className="font-bold text-2xl text-left text-textSecondary pt-5 italic pb-2"
-                          style={{ fontFamily: "Playfair Display" }}
-                        >
-                          Daily Feed
-                        </h2>
-                        <div className="mt-2 mb-4">
-                          <hr className="border-t-2 border-[var(--primaryUpperNavbarLine)] border-b-0" />
-                          <div style={{ height: "2px" }}></div>
-                          <hr className="border-b border-[var(--primaryUpperNavbarLine)] border-t-0" />
-                        </div>
-                         <DailyFeedCarousel setActivePage={setActivePage} />
-                         </div>
+                    <div className="w-full lg:w-[35%] pl-0 lg:pl-10 lg:mt-0 max-[1022px] md:pl-[60px] log:pl-[60px]">
+                      <h2
+                        className="font-bold text-xl sm:text-xl md:text-2xl font-tertiary text-textSecondary text-left pt-5 italic pb-2 max-[1022px]:mt-[22px]"
+                        style={{ fontFamily: "Playfair Display" }}
+                      >
+                        Daily
+                      </h2>
+                      <div className="mt-2 mb-4">
+                        <hr className="border-t-2 border-[var(--primaryUpperNavbarLine)] border-b-0" />
+                        <div style={{ height: "2px" }}></div>
+                        <hr className="border-b border-[var(--primaryUpperNavbarLine)] border-t-0" />
+                      </div>
+                      <DailyFeedCarousel setActivePage={setActivePage} />
+                    </div>
                   </div>
-                  <FeaturedStories activePage="home"/>
+                  <FeaturedStories activePage="home" />
                 </div>
               </div>
             </section>

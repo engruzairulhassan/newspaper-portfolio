@@ -12,12 +12,18 @@ function Page() {
   const [selectedTheme, setSelectedTheme] = useState("classic");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [activePage, setActivePage] = useState("home");
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+  
   const theme = getTheme(selectedTheme);
 
   const handleThemeChange = (themeName) => {
     setSelectedTheme(themeName);
     setIsDropdownOpen(false);
   };
+
+  console.log("isDropdownVisible ===>", isDropdownVisible);
+
+  console.log("isDropdownOpen===>", isDropdownOpen);
 
   // useEffect(() => {
   //   // FetchCSVData();
@@ -38,8 +44,13 @@ function Page() {
 
       <div className="inner-container">
         <h1 className=""></h1>
-        <Header activePage={activePage} setActivePage={setActivePage} />
-        <div>
+        <Header
+          activePage={activePage}
+          setActivePage={setActivePage}
+          setIsDropdownVisible={setIsDropdownVisible}
+          isDropdownVisible={isDropdownVisible}
+        />
+        <div className={`${isDropdownVisible ? "pt-58" : ""}`}>
           {activePage === "home" ? (
             <Home activePage={activePage} setActivePage={setActivePage} />
           ) : (

@@ -4,8 +4,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { pages } from "../../components/utils/const/index";
 
-function Header({ activePage, setActivePage, theme }) {
-  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+function Header({
+  activePage,
+  setActivePage,
+  theme,
+  isDropdownVisible,
+  setIsDropdownVisible,
+}) {
+  // const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const toggleDropdown = () => {
     setIsDropdownVisible((prevState) => !prevState);
   };
@@ -21,7 +27,7 @@ function Header({ activePage, setActivePage, theme }) {
       </div>
       <div className="w-full">
         <nav className="py-2 text-textPrimary font-bold pt-10 bg-secondary rounded">
-          <div style={{ padding: "0px 100px"}}>
+          <div style={{ width: "83%", margin: "auto" }}>
             <hr
               style={{
                 borderTop: "2px solid var(--primaryUpperNavbarLine)",
@@ -78,7 +84,7 @@ function Header({ activePage, setActivePage, theme }) {
               </svg>
             </div>
             {isDropdownVisible && (
-              <ul className="absolute top-16 left-0 w-full bg-white lg:hidden bg-headerBg mt-[100px] text-left">
+              <ul className="absolute top-16 left-0 w-full bg-white lg:hidden bg-headerBg ml-10 mt-[180px] text-left">
                 {pages.map((page) => (
                   <li
                     key={page.name}

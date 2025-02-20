@@ -53,7 +53,9 @@ const Footer = () => {
                   {section.links.map((link, linkIndex) => (
                     <li key={linkIndex} className="mb-2">
                       <a href="#" className="hover:underline">
-                        <p className="text-gray-500 text-base">{link}</p>
+                        <p className="text-gray-500 text:xxsm lg:text-base">
+                          {link}
+                        </p>
                       </a>
                     </li>
                   ))}
@@ -66,7 +68,7 @@ const Footer = () => {
           className="h-1 bg-black w-full"
           style={{ marginBottom: "11px" }}
         ></div>
-        <p style={{ paddingBottom: "10px", fontSize: "12px" }}>
+        <p className="text-xsm px-5 lg:px-0 lg:text-base">
           This is a sample website - cmsmasters © 2025 / All Rights Reserved
         </p>
       </div>

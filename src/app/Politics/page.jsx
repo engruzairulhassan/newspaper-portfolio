@@ -30,7 +30,7 @@ const page = ({activePage}) => {
   };
 
   return (
-    <div className="parent-container" style={{ width: "84%", margin: "auto" }}>
+    <div style={{ width: "84%", margin: "auto" }}>
       <div className="flex justify-between items-center p-4">
         <div
           className="font-bold text-2xl text-left text-textSecondary pt-10 italic pb-2"
