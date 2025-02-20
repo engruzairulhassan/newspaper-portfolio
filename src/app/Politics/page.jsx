@@ -46,7 +46,8 @@ const page = ({activePage}) => {
             "postTypes",
           ].includes(activePage) && (
             <h2
-              className="font-bold text-2xl text-left text-textSecondary italic pb-2"
+              className="font-bold text-left text-textSecondary italic pb-2 
+             text-xl sm:text-2xl md:text-3xl lg:text-2xl"
               style={{ fontFamily: "Playfair Display" }}
             >
               {activePage}
@@ -135,9 +136,7 @@ const page = ({activePage}) => {
                       <div className="max-w-3xl mx-auto text-black border-b mb-3 text-left">
                         <p className="text-[11px]">
                           <span className="pr-3">{post.date}</span> |{" "}
-                          <span
-                            className="pr-3 font-playfair"
-                          >
+                          <span className="pr-3 font-playfair">
                             {post.categories.join(", ")}
                           </span>{" "}
                           | BY <span className="pr-3">{post.author} | </span>

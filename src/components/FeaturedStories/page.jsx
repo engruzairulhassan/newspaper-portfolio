@@ -85,7 +85,7 @@ export default function FeaturedStories({activePage}) {
               placeholder="Your email address *"
               className="px-4 w-full sm:w-42 h-10 focus:outline-none text-center sm:text-left"
             />
-            <button className="bg-black text-white font-semibold text-xs px-4 h-10 w-full sm:w-auto">
+            <button className="bg-black text-white font-bold text-xxsm px-4 h-10 w-full sm:w-auto whitespace-nowrap">
               SIGN UP
             </button>
           </div>
