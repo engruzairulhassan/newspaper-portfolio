@@ -822,6 +822,50 @@ export const articles = [
           image: "/images/food6.jpg",
         },
       ],
+      home: [
+        {
+          date: "May 5, 2024",
+          category: "Food",
+          title: "Top Restaurants 2024",
+          description: "Where to eat this year.",
+          image: "/images/food1.jpg",
+        },
+        {
+          date: "May 10, 2024",
+          category: "Food",
+          title: "Vegan Diet Benefits",
+          description: "Healthier living with plants.",
+          image: "/images/food2.jpg",
+        },
+        {
+          date: "May 15, 2024",
+          category: "Food",
+          title: "Cooking Trends",
+          description: "Popular dishes & techniques.",
+          image: "/images/food3.jpg",
+        },
+        {
+          date: "May 20, 2024",
+          category: "Food",
+          title: "Street Food Guide",
+          description: "Best eats from around the world.",
+          image: "/images/food4.jpg",
+        },
+        {
+          date: "May 25, 2024",
+          category: "Food",
+          title: "Home Cooking Hacks",
+          description: "Make meals faster & better.",
+          image: "/images/food5.jpg",
+        },
+        {
+          date: "May 28, 2024",
+          category: "Food",
+          title: "Healthy Eating",
+          description: "Tips for a balanced diet.",
+          image: "/images/food6.jpg",
+        },
+      ],
     };
 
 export const categories = [

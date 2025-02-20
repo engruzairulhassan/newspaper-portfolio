@@ -50,7 +50,7 @@ const HomeContainer = ({ activePage, setActivePage }) => {
                          <DailyFeedCarousel setActivePage={setActivePage} />
                          </div>
                   </div>
-                  <FeaturedStories />
+                  <FeaturedStories activePage="home"/>
                 </div>
               </div>
             </section>

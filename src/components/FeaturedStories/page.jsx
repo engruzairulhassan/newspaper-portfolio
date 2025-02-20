@@ -13,6 +13,7 @@ export default function FeaturedStories({activePage}) {
       food: "/images/food.jpg",
       shortcodes: "/images/shortcodes.jpg",
       postTypes: "/images/postTypes.jpg",
+      home: "/images/shortcodes.jpg",
     };
 
     const activeCategories = [
@@ -23,6 +24,7 @@ export default function FeaturedStories({activePage}) {
       "food",
       "shortcodes",
       "postTypes",
+      "home",
     ];
 
   return (
