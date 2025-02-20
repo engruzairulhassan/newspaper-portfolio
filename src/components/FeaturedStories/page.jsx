@@ -1,51 +1,62 @@
 import Image from "next/image";
-import { articles } from "../utils/const";
+import { allArticles } from "../utils/const";
 
-export default function FeaturedStories() {
+export default function FeaturedStories({activePage}) {
+  console.log("activePage ===>", activePage);
+    console.log("activePage in polictic ===>", activePage);
+   
+    const imageSrcMap = {
+      politics: "/images/politics.jpg",
+      technology: "/images/technology.jpg",
+      sports: "/images/sports.jpg",
+      fashion: "/images/fashion.jpg",
+      food: "/images/food.jpg",
+      shortcodes: "/images/shortcodes.jpg",
+      postTypes: "/images/postTypes.jpg",
+    };
+
+    const activeCategories = [
+      "fashion",
+      "technology",
+      "politics",
+      "sports",
+      "food",
+      "shortcodes",
+      "postTypes",
+    ];
+
   return (
     <section className="max-w-6xl mx-auto py-12 px-4 text-black">
-      {/* <div
-        className="h-1 bg-black w-full"
-        style={{ border: "3px solid black" }}
-      ></div> */}
-      {/* <h2
-        className="text-2xl font-bold italic mb-6 text-left"
-        style={{ marginTop: "40px", fontFamily: "Playfair Display" }}
-      >
-        Featured Stories
-      </h2> */}
-      {/* <div className="mt-2 mb-8">
-        <hr className="border-t-2 border-[var(--primaryUpperNavbarLine)] border-b-0" />
-        <div style={{ height: "2px" }}></div>
-        <hr className="border-b border-[var(--primaryUpperNavbarLine)] border-t-0" />
-      </div> */}
 
-      <div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        // style={{ border: "1px solid black" }}
-      >
-        {articles.map((article, index) => (
-          <div key={index} className="group text-left">
-            <div className="relative w-full h-48">
-              <Image
-                src={article.image}
-                alt={article.title}
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
+        {activeCategories.includes(activePage) && (
+          <div>
+            <div className="grid grid-cols-3 gap-4 mt-6">
+              {allArticles[activePage]?.map((article, index) => (
+                <div key={index} className="group text-left">
+                  <div className="relative w-full h-48">
+                    <Image
+                      src={imageSrcMap[activePage]}
+                      alt={activePage}
+                      width={300}
+                      height={200}
+                      className="rounded-lg object-cover w-full h-full"
+                    />
+                  </div>
+                  <p className="text-sm text-gray-500 mt-2">
+                    {article.date}{" "}
+                    <span className="font-bold"> | {article.category}</span>
+                  </p>
+                  <h3 className="font-bold text-lg mt-2 cursor-pointer">
+                    {article.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm mt-2">
+                    {article.description}
+                  </p>
+                </div>
+              ))}
             </div>
-            <p className="text-sm text-gray-500 mt-2">
-              {article.date}{" "}
-              <span className="font-bold"> | {article.category}</span>
-            </p>
-            <h3 className="font-bold text-lg mt-2 cursor-pointer">
-              {article.title}
-            </h3>
-            <p className="text-gray-600 text-sm mt-2">{article.description}</p>
           </div>
-        ))}
-      </div>
+        )}
 
       <hr
         className="border-t-2  border-[var(--primaryLowerNavbarLine)] border-b-0"
