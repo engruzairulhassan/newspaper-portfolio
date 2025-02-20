@@ -4,16 +4,16 @@ import { latestArticles } from "../../components/utils/const";
 const Articles = () => {
   return (
     <div
-      className="col-span-1 md:col-span-3 pt-14 border-r border-[var(--primaryUpperNavbarLine)]"
+      className="col-span-1 md:col-span-3 pt-8  border-[var(--primaryUpperNavbarLine)]"
     >
       <h5
-        className="font-bold text-sm text-left  pt-[32px]"
-        style={{ color: "var(--selectedItemColor)", paddingTop: "40px" }}
+        className="font-bold text-sm text-left  pt-[18px]"
+        style={{ color: "var(--selectedItemColor)"}}
       >
         LATEST ARTICLES
       </h5>
       <div className="pt-4 pr-[14px] pb-0 pl-[8px]">
-        <ul className="list-disc pl-6 space-y-2" style={{ paddingTop: "14px" }}>
+        <ul className="list-disc pl-6 space-y-2 pt-4">
           {latestArticles.map((article, index) => (
             <li
               key={index}

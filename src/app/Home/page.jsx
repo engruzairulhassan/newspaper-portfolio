@@ -36,7 +36,7 @@ const HomeContainer = ({ activePage, setActivePage }) => {
                       <BreakingNews />
                     </div>
                     <div className="w-full lg:w-[35%] pl-0 lg:pl-10 lg:mt-0 max-[1022px]:pl-[60px]">
-                      <h2
+                        <h2
                              className="font-bold text-2xl text-left text-textSecondary pt-5 italic pb-2"
                           style={{ fontFamily: "Playfair Display" }}
                         >

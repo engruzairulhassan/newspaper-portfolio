@@ -5,7 +5,6 @@ export default function ContactForm() {
     <div
       className="flex flex-col md:flex-row gap-8 text-black p-6 max-w-4xl mx-auto"
     >
-      {/* Contact Info Section */}
       <div className="md:w-1/3 space-y-4">
         <h2 className="font-bold text-lg">CONTACTS</h2>
 
@@ -86,7 +85,6 @@ export default function ContactForm() {
         </p>
       </div>
 
-      {/* Form Section */}
       <div className="md:w-2/3">
         <form className="space-y-4">
           <div>

@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { footerData } from "../../components/utils/const";
 
@@ -11,12 +12,12 @@ const Footer = () => {
       >
         <div className="h-1 bg-black w-full border-6 border-black"></div>
         <div>
-          <div className="flex" style={{ paddingLeft: "20px" }}>
+          <div
+            className="flex flex-wrap justify-center"
+            style={{ paddingLeft: "20px" }}
+          >
             {footerData.map((section, index) => (
-              <div
-                key={index}
-                className="w-full pt-10"
-              >
+              <div key={index} className="w-full md:w-1/2 lg:w-1/4 pt-10 px-4">
                 {section.title === "NEWSPAPER" ? (
                   <h3
                     className="font-bold text-black text-[35px] font-playfair leading-none flex flex-col items-start"
@@ -48,7 +49,7 @@ const Footer = () => {
                   </h3>
                 ) : (
                   <h3
-                    className="text-lg font-semibold  pb-2 mb-4"
+                    className="text-lg font-semibold pb-2 mb-4"
                     style={{ fontSize: "20px" }}
                   >
                     {section.title}
@@ -69,10 +70,11 @@ const Footer = () => {
               </div>
             ))}
           </div>
+          
         </div>
         <div
           className="h-1 bg-black w-full"
-          style={{ border: "1px solid black" , marginBottom: "11px" }}
+          style={{marginBottom: "11px" }}
         ></div>
         <p style={{ paddingBottom: "10px", fontSize: "12px" }}>
           This is a sample website - cmsmasters © 2025 / All Rights Reserved

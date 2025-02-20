@@ -111,7 +111,7 @@ h1 {
 
   .title {
     @apply text-textPrimary font-bold bg-secondary rounded font-black tracking-tight leading-[1] flex items-center justify-center font-primary;
-    @apply text-4xl sm:text-5xl md:text-6xl lg:text-[73px] lg:tracking-[-3px] px-2 py-2;
+    @apply sm:text-5xl md:text-6xl lg:text-[73px]  px-2;
   }
 
   .title-first {

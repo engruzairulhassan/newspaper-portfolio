@@ -14,7 +14,6 @@ const ThemeMenu = ({
         className="theme-button"
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
       >
-        {/* style={{ border: "1px solid gray" }} */}
         <div className="icon-wrapper">
           <FontAwesomeIcon
             icon={faChevronDown}

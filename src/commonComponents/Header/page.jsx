@@ -21,7 +21,7 @@ function Header({ activePage, setActivePage, theme }) {
       </div>
       <div className="w-full">
         <nav className="py-2 text-textPrimary font-bold pt-10 bg-secondary rounded">
-          <div style={{ padding: "0px 100px" }}>
+          <div style={{ padding: "0px 100px"}}>
             <hr
               style={{
                 borderTop: "2px solid var(--primaryUpperNavbarLine)",
@@ -93,7 +93,10 @@ function Header({ activePage, setActivePage, theme }) {
           </div>
         </nav>
         <div className="mt-2">
-          <hr className="border-t-1 t-2 border-[var(--primaryLowerNavbarLine)] mb-8 border-b-0" style={{width: '83%' ,margin: 'auto'}} />
+          <hr
+            className="border-t-1 t-2 border-[var(--primaryLowerNavbarLine)] mb-8 border-b-0"
+            style={{ width: "83%", margin: "auto" }}
+          />
         </div>
       </div>
     </>
