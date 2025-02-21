@@ -6,7 +6,7 @@ const BreakingNews = () => {
   return (
     <div className="col-span-1 md:col-span-6 lg:border-l lg:border-[var(--primaryUpperNavbarLine)]  lg:pl-[60px]">
       <h2
-        className="font-bold text-xl sm:text-xl md:text-2xl font-tertiary text-textSecondary text-left pt-5 italic pb-2 max-[1022px]:mt-[22px]"
+        className="font-bold sm:text-xl md:text-2xl font-tertiary text-textSecondary text-left pt-5 italic pb-2 below-lg:text-xls"
         style={{ fontFamily: "Playfair Display" }}
       >
         Breaking News

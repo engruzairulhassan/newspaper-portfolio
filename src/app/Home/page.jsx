@@ -37,7 +37,7 @@ const HomeContainer = ({ activePage, setActivePage }) => {
                     </div>
                     <div className="w-full lg:w-[35%] pl-0 lg:pl-10 lg:mt-0 max-[1022px] md:pl-[60px] log:pl-[60px]">
                       <h2
-                        className="font-bold text-xl sm:text-xl md:text-2xl font-tertiary text-textSecondary text-left pt-5 italic pb-2 max-[1022px]:mt-[22px]"
+                        className="font-bold sm:text-xl md:text-2xl font-tertiary text-textSecondary text-left pt-5 italic pb-2 below-lg:text-xls"
                         style={{ fontFamily: "Playfair Display" }}
                       >
                         Daily
